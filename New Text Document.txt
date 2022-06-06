@@ -1,0 +1,35 @@
+ $('.product-carousel').owlCarousel({
+        margin: 32,
+        loop: false,
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 10000,
+        items: 4,
+        responsive: {
+            0: {
+                autoWidth: true,
+                items: 2,
+                margin: 8,
+                loop: false
+            },
+            480: {
+                items: 3,
+                margin: 8,
+                loop: false,
+                autoWidth: true
+            },
+            920: {
+                items: 4,
+                autoWidth: true,
+                loop: false,
+                margin: 16
+            },
+            1025: {
+                items: 4,
+                autoWidth: true,
+                loop: false
+            }
+        }
+    });
+
+ <div class="product-carousel owl-carousel owl-theme">
