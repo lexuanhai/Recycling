@@ -1,0 +1,105 @@
+.box-head{
+    display: flex;
+    align-items: center;
+}
+.box-head .logo{
+    float: left;
+}
+.box-slider-head .title-h1{
+    font-size: 46px;
+    margin-bottom: 34px;
+}
+.box-slider-head .title-h1,
+.box-slider-head .title-h3{
+    font-weight: 700;
+}
+.box-slider-head .box-button{
+    position: absolute;
+    bottom: 110px;
+}
+.box-slider-head .box-button .button{
+    background-color: #007a33;
+}
+.box-content-hands{
+       background-color: #78be21;
+    height: 50px;
+    padding: 7px 22px;
+}
+.box-content-hands .txt-text{
+    color: white;
+    margin: unset;
+        float: left;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.box-content-hands .act-now{
+    padding: 8px 16px;
+    background: none;
+    color: white;
+    border-color: white;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-decoration: none;
+        float: right;
+}
+.box-alternative-solution{
+    padding: 56px 0px 0px 0px;
+}
+.box-alternative-solution .display-4{
+    margin-bottom: 40px;
+    font-size: 48px;
+    color: #30456E;
+}
+.box-alternative-solution .txt-title{
+    margin: 13px 0px;
+    color: #30456E;
+}
+.box-alternative-solution .strike-through{
+    width: 100%;
+}
+.box-area{
+    margin-top: 46px;
+}
+.box-area .header-text{
+    text-align: center;
+    display: block;
+    color: #30456E;
+}
+.box-area .text-content{
+    text-align: justify;
+    font-size: 19px;
+    color: #4A4A4A;
+}
+.box-area .single-box{
+    margin-right: unset !important;
+    margin-left: unset !important;
+}
+.box-area .single-box-two{
+    margin-right: unset !important;
+}
+.box-area .single-box-one{
+    margin-left: unset !important;
+}
+.item-image{
+    background-image: url('../img/4cfcfb902972dbabf9d5d3f72102bdc9.jpg');
+    height: 266px;
+    display: inline-block;
+    width: 260px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 4px;
+}
+.box-custom{
+    margin-bottom: 40px;
+}
+.box-custom .txt-title{
+    text-align: center;
+    margin-bottom: 45px;
+    margin-top: 30px;
+    color: #30456E;
+
+}
