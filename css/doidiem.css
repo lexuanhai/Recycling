@@ -172,6 +172,7 @@
 
 
 .buy-btn {
+    font-size: 14px;
     width: 160px;
     height: 40px;
     display: flex;
