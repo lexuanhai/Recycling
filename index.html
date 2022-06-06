@@ -33,7 +33,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+    <nav class="navbar box-menu navbar-expand-md navbar-light bg-light sticky-top">
     	<div class="container">
     	<div class="container-fluid box-head">
             <a class="navbar-branch logo" href="index.html">
@@ -84,10 +84,10 @@
         <li data-target="#slides" data-slide-to="3"></li>
     </ul> -->
     <div class="box-slider-head">
-    	<div class="container">
-            <div class="box-owl-carousel owl-carousel">
-                <div class="carousel-item active">
-                    <img src="img/banner/pexels-star-914682.jpg">
+    	<!-- owl-carousel -->
+            <div class="box-owl-carousel ">
+                <div class="box-carousel-item active">
+                    <!-- <img src="img/banner/pexels-star-914682.jpg"> -->
                     <div class="carousel-caption">
                         <h1 class="title-h1">Chuyển đổi nền kinh tế xanh</h1>
                         <h3 class="title-h3">TIÊN PHONG TẠI VIỆT NAM</h3>
@@ -97,7 +97,7 @@
                         </div>
                     </div>
                 </div>   
-                <div class="item-owl-carousel">
+                <!-- <div class="item-owl-carousel">
                     <img src="img/banner/pexels-star-914682.jpg">
                     <div class="carousel-caption">
                         <h1 class="title-h1">Chuyển đổi nền kinh tế xanh</h1>
@@ -144,10 +144,10 @@
                             <button type="button" class="button youtube"><a href="#" class="button"><i class="fab fa-youtube"> </i> </a> HƯỚNG DẪN ĐỔI ĐIỂM</button>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
     		         
-    </div>
+        
     </div>   
     <div class="container-fluid">
     	<div class="container">
@@ -325,35 +325,35 @@
 </body>
 <script type="text/javascript">
 	 $(document).ready(function () {
-	 		$('.box-owl-carousel').owlCarousel({		        
-		        loop: false,
-		        dots: false,
-		        autoplay: true,
-		        autoplayTimeout: 7000,
-		        items: 1,
-		        responsive: {
-                        0: {
-                            autoWidth: true,
-                            items: 2,
-                            margin: 8,
-                            loop: false
-                        },
-                        480: {
-                            items: 3,
-                            margin: 8,
-                            loop: false,
-                            autoWidth: true
-                        },
-                        920: {
-                            items: 1,
+	 		// $('.box-owl-carousel').owlCarousel({		        
+		  //       loop: false,
+		  //       dots: false,
+		  //       autoplay: true,
+		  //       autoplayTimeout: 7000,
+		  //       items: 1,
+		  //       responsive: {
+    //                     0: {
+    //                         autoWidth: true,
+    //                         items: 2,
+    //                         margin: 8,
+    //                         loop: false
+    //                     },
+    //                     480: {
+    //                         items: 3,
+    //                         margin: 8,
+    //                         loop: false,
+    //                         autoWidth: true
+    //                     },
+    //                     920: {
+    //                         items: 1,
                             
-                        },
-                        1025: {
-                            items: 1,
+    //                     },
+    //                     1025: {
+    //                         items: 1,
                            
-                        }
-                    }
-		    });
+    //                     }
+    //                 }
+		  //   });
             $('.box-image-custom').owlCarousel({                
                 loop: false,
                 dots: false,

@@ -1,9 +1,17 @@
+.navbar.box-menu{
+    position: sticky !important;
+}
 .box-head{
     display: flex;
     align-items: center;
 }
 .box-head .logo{
     float: left;
+}
+.box-slider-head{
+        height: 450px;
+    width: 100%;
+    display: inline-block;
 }
 .box-slider-head .title-h1{
     font-size: 46px;
@@ -16,6 +24,7 @@
 .box-slider-head .box-button{
     position: absolute;
     bottom: 110px;
+    width: 100%;
 }
 .box-slider-head .box-button .button{
     background-color: #007a33;
@@ -102,4 +111,21 @@
     margin-top: 30px;
     color: #30456E;
 
+}
+.box-owl-carousel .box-carousel-item{
+    background-image: url('../img/banner/pexels-star-914682.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+        height: 100%;
+    width: 100%;
+    display: inline-block;
+}
+.box-owl-carousel{
+    display: inline-block;
+    width: 100%;
+}
+.box-owl-carousel .box-carousel-item .title-h1,
+.box-owl-carousel .box-carousel-item .title-h3{
+    text-transform: uppercase;
+    text-shadow: 5px 5px 15px #000;
 }
