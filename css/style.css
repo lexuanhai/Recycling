@@ -336,7 +336,7 @@ body {
     transition: .3s;
 }
 
-.img-area {
+/*.img-area {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -349,7 +349,7 @@ body {
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;
-}
+}*/
 
 .single-box:nth-child(1) .img-area {
     background-image: url('../img/test/community-news-subv2.jpg');
@@ -381,10 +381,6 @@ body {
     line-height: 30px;
 }
 
-.single-box:hover {
-    background: #007a33;
-    color: #78be21;
-}
 
 .fa-facebook {
     color: #78be21;

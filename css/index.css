@@ -1,5 +1,6 @@
 .navbar.box-menu{
     position: sticky !important;
+    padding: unset !important;
 }
 .box-head{
     display: flex;
@@ -12,6 +13,7 @@
         height: 450px;
     width: 100%;
     display: inline-block;
+    float: left;
 }
 .box-slider-head .title-h1{
     font-size: 46px;
@@ -33,6 +35,7 @@
        background-color: #78be21;
     height: 50px;
     padding: 7px 22px;
+    display: flex;
 }
 .box-content-hands .txt-text{
     color: white;
@@ -79,7 +82,7 @@
 }
 .box-area .text-content{
     text-align: justify;
-    font-size: 19px;
+    font-size: 18px;
     color: #4A4A4A;
 }
 .box-area .single-box{
@@ -96,11 +99,12 @@
     background-image: url('../img/4cfcfb902972dbabf9d5d3f72102bdc9.jpg');
     height: 266px;
     display: inline-block;
-    width: 260px;
+   /* width: 260px;*/
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 4px;
+    width: 100%;
 }
 .box-custom{
     margin-bottom: 40px;
@@ -123,9 +127,42 @@
 .box-owl-carousel{
     display: inline-block;
     width: 100%;
+    height: 100%;
 }
 .box-owl-carousel .box-carousel-item .title-h1,
 .box-owl-carousel .box-carousel-item .title-h3{
     text-transform: uppercase;
     text-shadow: 5px 5px 15px #000;
+}
+.box-content-item{
+    border: 3px solid #78be21;
+        height: 400px;
+    position: relative;
+    text-align: center;
+}
+.box-content-item .img-text{
+        padding-left: 8px;
+    padding-right: 8px;
+}
+.box-content-item .header-text{
+    position: absolute;
+    top: -30px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    left: 0;
+}
+.box-content-item .header-text strong{
+        background: #fff;
+    line-height: 1.3;
+    width: 77%;
+}
+.box-content-item .img-area {
+    background-image: url(../img/test/MaterialsRecovery-sm.jpg);
+    width: 100%;
+    display: inline-block;
+    height: 209px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
