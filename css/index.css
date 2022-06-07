@@ -11,10 +11,11 @@
     float: left;
 }
 .box-slider-head{
-        height: 450px;
+        height: 370px;
     width: 100%;
     display: inline-block;
     float: left;
+    margin-top: 120px;
 }
 .box-slider-head .title-h1{
     font-size: 46px;
@@ -62,6 +63,8 @@
 }
 .box-alternative-solution{
     padding: 56px 0px 0px 0px;
+    display: inline-block;
+    width: 100%;
 }
 .box-alternative-solution .display-4{
     margin-bottom: 40px;
@@ -208,7 +211,10 @@
 
 
 .box-owl-carousel .carousel-caption{
-    top: 13%;
+   /* top: 13%;
+    padding-top: 44px;*/
+    position: unset;
+    height: 100%;
     padding-top: 44px;
 }
 .carousel-inner img {
