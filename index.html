@@ -19,12 +19,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
-
-    <link href="./css/header.css" rel="stylesheet">
-    <link href="./css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="./plugins/fontawesome/all.css">
+    <link rel="stylesheet" href="./plugins/webfonts/font.css">
+    
 
     <link rel="stylesheet" href="./plugins/OwlCarousel2-2.3.4/docs/assets/owlcarousel/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="./plugins/OwlCarousel2-2.3.4/docs/assets/owlcarousel/assets/owl.theme.default.min.css">
+
+    <link href="./css/header.css" rel="stylesheet">
+    <link href="./css/index.css" rel="stylesheet">
 
      <script src="./plugins/OwlCarousel2-2.3.4/docs/assets/owlcarousel/owl.carousel.js"></script>
        <script src="./js/header/header.js"></script>
@@ -38,56 +41,68 @@
 <body>
     <nav class="navbar box-menu navbar-expand-md navbar-light bg-light sticky-top">
     	<div class="container">
-    	<div class="container-fluid box-head">
-            <a class="navbar-branch logo" href="index.html">
-                <!-- <img src="img/banner/Logo2.png" height="50"> -->
-            </a>
-            <div class="desk-menu collapse navbar-collapse justify-content-md-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">TRANG CHỦ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="gioithieu.html">GIỚI THIỆU</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="lienhe.html">LIÊN HỆ</a>
-                    </li>
-                    <li class="nav-item lisanpham">
-                        <a class="nav-link" href="#">TÍCH ĐIỂM-ĐỔI THƯỞNG
-                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                        </a>
-                        <ul class="sub_menu">
-                            <li class="">
-                                <a href="doidiem.html" title="Sản phẩm - Style 1"> 
-                          ĐỔI ĐIỂM RECYCLABLE WASTE
-                        </a>
-                            </li>
-                            <li class="">
-                                <a href="detailproduct.html" title="Sản phẩm - Style 2"> 
-                          CÁCH THỨC ĐỔI ĐIỂM
-                        </a>
-                            </li>
+        	<div class="container-fluid box-head">
+                <a class="navbar-branch logo" href="index.html">
+                    <!-- <img src="img/banner/Logo2.png" height="50"> -->
+                </a>
+                <div class="desk-menu collapse navbar-collapse justify-content-md-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">TRANG CHỦ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gioithieu.html">GIỚI THIỆU</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="lienhe.html">LIÊN HỆ</a>
+                        </li>
+                        <li class="nav-item lisanpham">
+                            <a class="nav-link" href="#">TÍCH ĐIỂM-ĐỔI THƯỞNG
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </a>
+                            <ul class="sub_menu">
+                                <li class="">
+                                    <a href="doidiem.html" title="Sản phẩm - Style 1"> 
+                              ĐỔI ĐIỂM RECYCLABLE WASTE
+                            </a>
+                                </li>
+                                <li class="">
+                                    <a href="detailproduct.html" title="Sản phẩm - Style 2"> 
+                              CÁCH THỨC ĐỔI ĐIỂM
+                            </a>
+                                </li>
+                                 <li class="">
+                                    <a href="detailproduct.html" title="Sản phẩm - Style 2"> 
+                              ĐỊA ĐIỂM ĐỔI ĐIỂM
+                            </a>
+                                </li>
 
-                        </ul>
-                    </li>
-                    <li class="nav-item lisanpham">
-                        <!-- <a class="nav-link" href="dangnhap.html">ĐĂNG NHẬP/ĐĂNG KÝ</a> -->
-                         <a class="nav-link" href="dangnhap.html">ĐĂNG NHẬP
-                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                         </a>
-                                <ul class="sub_menu">
-                                    <li class="">
-                                        <a href="doidiem.html" title="Sản phẩm - Style 1"> 
-                                            ĐĂNG KÝ
-                                        </a>
-                                    </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item lisanpham">
+                            <!-- <a class="nav-link" href="dangnhap.html">ĐĂNG NHẬP/ĐĂNG KÝ</a> -->
+                             <a class="nav-link" href="dangnhap.html">SẢN PHẨM
+                               <!--  <i class="fa fa-chevron-down" aria-hidden="true"></i> -->
+                             </a>
+                                    <!-- <ul class="sub_menu">
+                                        <li class="">
+                                            <a href="doidiem.html" title="Sản phẩm - Style 1"> 
+                                                ĐĂNG KÝ
+                                            </a>
+                                        </li>
 
-                                </ul>
-                    </li>
-                </ul>
+                                    </ul> -->
+                        </li>
+                    </ul>
+                </div>
+                <div class="box-login-out">
+                    <a style="color: #272727" href="" class="login-out"><i class="fas fa-user-alt"></i></a>
+                    <div class="dropdown-content-login-out">
+                        <a href="">Đăng Ký</a>
+                        <a href="">Đăng Nhập</a>
+                    </div>
+                </div>
             </div>
-        </div>
     	</div>
        
     </nav>
@@ -251,6 +266,24 @@
        
     </div>
 
+    <section class="section wrapper-home-newsletter">
+            <div class="container-fluid">
+                <div class="content-newsletter">
+                    <h2>Đăng ký</h2>
+                    <p>Đăng ký nhận bản tin của Runner Inn để cập nhật những sản phẩm mới, nhận thông tin ưu đãi đặc biệt và thông tin giảm giá khác.</p>
+                    <div class="form-newsletter">
+                        <form action="" accept-charset="UTF-8" class="">
+                            <div class="form-group">
+                                <input type="hidden" id="contact_tags">
+                                <input required="" type="email" value="" placeholder="Nhập email của bạn" aria-label="Email Address" class="">
+                                <button type="submit" class=""><span>Gửi</span></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     <section class="section section-gallery box-custom">
          <div class="hot_sp">
                 <h2 class="txt-title">
@@ -258,7 +291,42 @@
                 </h2>
             </div>
             <div class="list-gallery clearfix">
-                <!-- owl-carousel -->
+                <ul class="shoes-gp">
+                    <li>
+                        <div class="gallery_item">
+                            <img class="img-resize" src="./img/shoes/gallery_item_1.jpg" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gallery_item">
+                            <img class="img-resize" src="./img/shoes/gallery_item_2.jpg" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gallery_item">
+                            <img class="img-resize" src="./img/shoes/gallery_item_3.jpg" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gallery_item">
+                            <img class="img-resize" src="./img/shoes/gallery_item_4.jpg" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gallery_item">
+                            <img class="img-resize" src="./img/shoes/gallery_item_5.jpg" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gallery_item">
+                            <img class="img-resize" src="./img/shoes/gallery_item_6.jpg" alt="">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- <div class="list-gallery clearfix">
+                <!-- owl-carousel
                 <div class="box-image-custom owl-carousel">
                     <div class="item-image">
                         
@@ -294,7 +362,7 @@
                         
                     </div>
                 </div>               
-            </div>
+            </div> -->
     </section>
     <!-- Footer -->
     <!-- Site footer -->
