@@ -3,6 +3,7 @@
    window.onscroll = function() {scrollFunction()};
 
     function scrollFunction() {
+      debugger;
       if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
         $(".box-menu").css("padding","10px 10px 10px 10px");
          $(".nav-link").css("font-size","14px"); 
