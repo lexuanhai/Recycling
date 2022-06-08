@@ -190,6 +190,7 @@
 
 .site-footer a {
     color: #000;
+        font-family: "Quicksand", sans-serif;
 }
 
 .site-footer a:hover {
@@ -197,17 +198,20 @@
     text-decoration: none;
 }
 
+
 .footer-links {
     padding-left: 0;
     list-style: none
 }
 
 .footer-links li {
-    display: block
+    display: block;
+    font-family: "Quicksand", sans-serif;
 }
 
 .footer-links a {
     color: black;
+    font-family: "Quicksand", sans-serif;
 }
 
 .footer-links a:active,
@@ -233,10 +237,14 @@
     margin-right: 0;
     border-radius: 100%;
     background-color: #e5e7e9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .copyright-text {
-    margin: 0
+    margin: 0;
+    font-family: "Quicksand", sans-serif;
 }
 
 .social-icons {

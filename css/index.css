@@ -139,12 +139,29 @@
     margin-bottom: 40px;
 }
 .box-custom .txt-title{
-    text-align: center;
-    margin-bottom: 45px;
-    margin-top: 30px;
+        text-align: center;
+    margin-bottom: 76px;
+    margin-top: 70px;
     color: #30456E;
-
+    position: relative;
 }
+
+
+.box-custom .txt-title:after {
+       position: absolute;
+    content: "";
+    display: block;
+    width: 55px;
+    height: 1px;
+    bottom: -11px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 2;
+    /* top: 3px; */
+    background: #000000;
+}
+
 .box-owl-carousel .box-carousel-item{
     background-image: url('../img/banner/pexels-star-914682.jpg');
     background-repeat: no-repeat;
