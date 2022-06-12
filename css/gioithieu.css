@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
 }
-
 .box-head{
     display: flex;
     align-items: center;
@@ -15,14 +14,14 @@
     float: left;    
 }
 .imge-background{
-    margin-top: 120px;
+    margin-top: 100px;
 }
 .background-image-content{
     
     /*background-image: url(../img/banner/pexels-alena-koval-886521.jpg);*/
     background-image: url(../img/gioi-thieu/slide2.png);
     background-size: cover;
-    background-position: center -71px;
+    /*background-position: center;*/
     background-repeat: no-repeat;
     height: 400px;
     display: flex;
@@ -110,9 +109,40 @@
 }
 .box-distinctive .box-image{
      background-image: url(../img/gioi-thieu/about.png);
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     height: 180px;   
 }
-
-
+@media(max-width: 1024px){  
+    .box-distinctive .box-image{
+        height: 120px;
+    }
+}
+@media(max-width: 920px){
+    /*.box-distinctive {
+       margin-bottom: 0px;
+    }*/
+}
+@media(max-width: 770px){
+    .background-image-text h2, .background-image-text h3 {
+        font-size: 36px;
+    }
+}
+@media(max-width: 720px){
+    .box-distinctive {
+         margin-bottom: 0px; 
+    }
+}
+@media(max-width: 520px){
+    .background-image-text h2, .background-image-text h3 {
+        font-size: 28px;
+    }
+}
+@media(max-width: 480px){
+    .background-image-text h2, .background-image-text h3 {
+        font-size: 25px;
+    }
+}
+.box-distinctive .txt-title {
+    font-size: 38px;
+}

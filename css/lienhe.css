@@ -11,7 +11,9 @@
     font-weight: 700;
 }
 
-
+..carousel-item.carousel-item-custom{
+    height: 500px !important;
+}
 /* custom form nhận đăng khuyến mãi */
 
 .navbar {

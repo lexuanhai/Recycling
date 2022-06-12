@@ -878,6 +878,7 @@ select.form-control-plus {
     border: 1px solid #e7e7e7;
     border-radius: 4px;
     cursor: pointer;
+    padding: 10px 0px;
 }
 .faq-plus__top {
     -webkit-box-align: center;
@@ -965,3 +966,52 @@ select.form-control-plus {
 .faq-plus__item.active .faq-plus__name {
     color: #ee0033;
 }
+@media(max-width: 1200px){
+   .steps-custom {
+        overflow-x: scroll;
+    }
+    .steps-custom__list{
+            width: 1033px;
+    }
+    .benefit-member__images img{
+        width: 100%;
+    }
+  
+  .steps-custom::-webkit-scrollbar {
+      width: 2px;
+      height: 2px;
+      
+      position: absolute;
+          
+    }
+
+    .steps-custom::-webkit-scrollbar-track {
+      /*display: none;*/
+      border-radius: 40px;
+      height: 20px;
+      width: 10px;
+      /*-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);*/
+    }    
+    .steps-custom::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: #ddd;
+      outline: 1px solid slategrey;
+      position: absolute;
+      width: 10px;
+    }
+
+    .steps-custom::-webkit-scrollbar:vertical {
+      display: none;
+    }
+    .steps-custom::-webkit-scrollbar-track-piece {
+        display: none;
+    }
+    
+}
+@media(max-width: 1024px){
+   .box-baner .image-banner {
+        background-size: contain;
+        height: 350px;
+    }
+}
+

@@ -8,9 +8,9 @@
          $(".nav-link").css("font-size","14px"); 
          $(".navbar-branch.logo").css({"height":"50px","width":"136px"});
       } else {
-         $(".box-menu").css("padding","20px 50px 20px 50px");
+         $(".box-menu").css("padding","20px 30px 20px 30px");
          $(".navbar-branch.logo").css({"height":"60px","width":"162px"}); 
-         $(".nav-link").css("font-size","17px"); 
+         $(".nav-link").css("font-size","16px"); 
       }
     }
 })();

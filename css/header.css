@@ -137,14 +137,6 @@
     color: #272727;
 }
 
-
-
-
-
-
-
-
-
 .fa-facebook {
     color: #78be21;
 }
@@ -317,15 +309,21 @@
 
 @media (min-width: 1200px) {
     .box-menu .container {
-        max-width: 89% !important;
+        max-width: 93% !important;
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 
 .box-login-out {
   position: relative;
-  display: inline-block;
+  display: flex;
+  justify-items: center;
+  align-items: center;
 }
-
+.box-login-out .icon-search{
+    margin: 0px 13px;
+}
 .dropdown-content-login-out {
     display: none;
     position: absolute;
@@ -334,12 +332,14 @@
     box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
     padding: 5px 14px 5px 14px;
     z-index: 1;
-    left: -30px;
+    /*left: -30px;*/
     /* font-size: 19px; */
     border-radius: 5px;
+    bottom: -73px;
+    left: -36px;
 }
 
-.box-login-out:hover .dropdown-content-login-out {
+.box-login-out .login-out:hover + .dropdown-content-login-out {
   display: block;
 }
 .dropdown-content-login-out a{
@@ -353,4 +353,167 @@
 .box-head{
     display: flex;
     align-items: center;
+}
+
+/*Reponsive*/
+
+.box-menu .navbar-toggler {
+    color: rgba(0,0,0,.5);
+    border-color: rgba(0,0,0,.1);
+}
+.box-menu .navbar-toggler-icon {
+    background-image: url('../img/home/download.svg');
+}
+.box-menu .customm-nav{
+        width: 50px;
+    height: 50px;
+    display: block;
+    border: unset;
+}
+.box-menu .box-menu-mobile{
+    margin-left: 20px;
+    display: none;
+}
+
+.uk-offcanvas-flip .uk-offcanvas {
+    right: 0;
+    left: auto;
+}
+
+.uk-offcanvas-overlay {
+    width: 100vw;
+    touch-action: none;
+}
+.uk-offcanvas {
+    /*display: none;*/
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+}
+.uk-offcanvas-flip .uk-open>.uk-offcanvas-bar {
+    left: auto;
+    right: 0;
+}
+
+.uk-offcanvas-flip .uk-offcanvas-bar-animation {
+    transition-property: right;
+}
+button.uk-icon:not(:disabled) {
+    cursor: pointer;
+    color: #272727;
+}
+.box-menu .ul.navbar-nav {
+    list-style-type: none;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 13px;
+}
+.box-menu .box-menu-mobile .navbar-nav .nav-link {
+    color: initial;
+    color: #333333;
+    border: initial;
+    border-bottom: 1px dotted #ddd;
+    padding: initial;
+    padding: 10px 0px;
+}
+.box-menu .navbar-nav.lst-items-mobile{
+    display: inline-block !important;
+    width: 100%;
+}
+.box-items-mobile .uk-offcanvas-bar{
+    position: fixed;
+    right: 0;
+}
+.box-menu .box-items-mobile .uk-offcanvas-close{
+    float: right;
+    margin-right: 20px;
+        border: none;
+}
+.box-menu .box-items-mobile .uk-offcanvas-bar{
+        padding: 20px 0px 0px 0px;
+}
+.box-menu .lst-items-mobile .nav-link{
+    padding-left: 20px;
+    font-size: 16px !important;
+}
+
+@media(max-width: 1300px){
+    .box-menu .container{
+        max-width:  100% !important;
+    }
+}
+
+@media(max-width: 1200px){
+    .box-menu .container{
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+
+@media(max-width: 1175px){    
+    .box-menu .desk-menu{
+        display: none !important;
+    }
+    .box-menu .box-menu-mobile{
+        display: block;
+    }
+    .box-menu .dropdown-toggle::after{
+        right: 31px;
+        position: absolute;
+        top: 22px;
+    }
+    .box-menu-mobile .navbar-expand-md .navbar-nav .dropdown-menu{
+        width: 100% !important;
+    }
+    .box-menu .box-menu-mobile .navbar-nav .nav-link{
+        padding-left: 20px;
+    }
+}
+@media(max-width: 1024px){
+    .site-footer .social-icons a{
+        width: 40px;
+        height: 40px;
+    }
+    .social-icons a{
+        font-size: 26px;
+    }
+}
+@media(max-width:  920px){
+    .site-footer .social-icons {
+        text-align: center;
+    }
+    .site-footer .social-icons a {
+        width: 40px;
+        height: 40px;
+    }
+}
+@media(max-width: 480px){
+    .navbar-branch.logo{
+        height: 50px !important;
+        width: 120px !important;
+    }
+    .navbar-branch.logo{
+        background-size: contain;
+    }
+    .site-footer .social-icons {
+        margin-top: 10px;
+    }
+    .navbar.box-menu{
+        padding: 10px !important;
+    }
+    .box-alternative-solution p {
+        margin-bottom: 20px;
+    }
+    .uk-offcanvas-bar{
+        width: 100% !important;
+    }
+    .box-menu .box-menu-mobile .navbar-nav .nav-link {
+        padding: 10px 30px;
+    }
+
 }

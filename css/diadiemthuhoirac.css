@@ -1,0 +1,91 @@
+.box-garbage-collection ul li{
+    list-style-type: none;
+}
+.box-garbage-collection a{
+    text-decoration: none;
+}
+.box-garbage-collection ul{
+    padding-left: unset;
+}
+.box-garbage-collection,.box-garbage-collection .box-content{
+    display: inline-block;
+    width: 100%;
+}
+.box-garbage-collection .box-content{
+    margin-top: 50px;
+}
+.box-garbage-collection .box-image-head{
+    background: url('../img/dia-diem-thu-hoi-rac/banners-dia-diem-thu-hoi-1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 200px;
+    background-size: cover;
+    width: 100%;
+    margin-top: 107px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+.box-garbage-collection .box-image-head .txt-text{
+    color: #fff;
+    display: inline-block;
+    font-size: 25px;
+}
+.box-garbage-collection .box-image-head .txt-text a{
+    color: #fff;
+}
+.box-garbage-collection .box-image-head .txt-text span{
+    font-size: 20px;
+}
+
+.box-garbage-collection .box-content .txt-title{
+       font-weight: 700;
+    color: #333333;
+    position: relative;
+    text-align: center;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    margin-bottom: 50px;
+    font-size: 60px;
+}
+.box-garbage-collection .box-content .txt-title:after{
+       content: '';
+    width: 100px;
+    height: 4px;
+    background: #333333;
+    position: absolute;
+        bottom: -8px;
+}
+.box-garbage-collection .list-address .txt-tile{
+    font-weight: 700;
+    font-size: 33px;
+    margin-bottom: 22px;
+}
+.box-garbage-collection .list-address .txt-tile:before{
+    content: '';
+    background: url(../img/dia-diem-thu-hoi-rac/icon-arrow.png);
+    width: 52px;
+    height: 25px;
+    display: inline-block;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.box-garbage-collection .list-address ol{
+    padding-left: 25px;
+}
+.box-garbage-collection .list-address ol li{
+        padding-left: 10px;
+        margin-bottom: 10px;
+}
+.box-garbage-collection .list-address{
+    margin-bottom: 50px;
+}
+.box-garbage-collection .box-end{
+background-color: #eaf6c4 !important;
+width: 100%;
+height: 200px;
+    display: flex;
+    align-items: center;
+}

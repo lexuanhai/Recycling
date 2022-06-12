@@ -32,6 +32,12 @@
     display: inline-block;
     font-size: 25px;
 }
+.box-products .box-image-head .txt-text:after{
+    content: '';
+    width: 50%;
+    height: 2px;
+    background: #fff;
+}
 .box-products .woocommerce-breadcrumb{
     padding-left: 0;
     text-transform: uppercase;
