@@ -1,0 +1,239 @@
+/**
+iconfont Webfont
+*/
+@font-face {
+	font-family: 'iconfont';
+	src: url('iconfont.eot?1578937251122');
+	src: url('iconfont.eot?#iefix-1578937251122') format('embedded-opentype'),
+		url('iconfont.woff2?1578937251122') format('woff2'),
+		url('iconfont.woff?1578937251122') format('woff'),
+		url('iconfont.ttf?1578937251122') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^='fs-']:before,
+[class*=' fs-']:before {
+	font-family: 'iconfont';
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 1;
+	font-weight: normal;
+	font-style: normal;
+	speak: none;
+	text-decoration: inherit;
+	font-size: inherit;
+	text-transform: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/*
+Glyphs list
+*/
+ .fs-angle-down:before {
+			content: '\ea01';
+		}
+
+		 .fs-arrow-circle-right:before {
+			content: '\ea02';
+		}
+
+		 .fs-arrow-left-small:before {
+			content: '\ea03';
+		}
+
+		 .fs-bank:before {
+			content: '\ea04';
+		}
+
+		 .fs-close:before {
+			content: '\ea05';
+		}
+
+		 .fs-cmt-2:before {
+			content: '\ea06';
+		}
+
+		 .fs-cmt:before {
+			content: '\ea07';
+		}
+
+		 .fs-comment:before {
+			content: '\ea08';
+		}
+
+		 .fs-date-checked:before {
+			content: '\ea09';
+		}
+
+		 .fs-date:before {
+			content: '\ea0a';
+		}
+
+		 .fs-evelope:before {
+			content: '\ea0b';
+		}
+
+		 .fs-eye:before {
+			content: '\ea0c';
+		}
+
+		 .fs-face:before {
+			content: '\ea0d';
+		}
+
+		 .fs-faq-0:before {
+			content: '\ea0e';
+		}
+
+		 .fs-faq-1:before {
+			content: '\ea0f';
+		}
+
+		 .fs-faq-2:before {
+			content: '\ea10';
+		}
+
+		 .fs-faq-3:before {
+			content: '\ea11';
+		}
+
+		 .fs-faq-4:before {
+			content: '\ea12';
+		}
+
+		 .fs-goup-user:before {
+			content: '\ea13';
+		}
+
+		 .fs-headphone:before {
+			content: '\ea14';
+		}
+
+		 .fs-heart:before {
+			content: '\ea15';
+		}
+
+		 .fs-icon-box-ktdh:before {
+			content: '\ea16';
+		}
+
+		 .fs-icon-building:before {
+			content: '\ea17';
+		}
+
+		 .fs-icon-checked-ktdh:before {
+			content: '\ea18';
+		}
+
+		 .fs-icon-clock-mc:before {
+			content: '\ea19';
+		}
+
+		 .fs-icon-map-mc:before {
+			content: '\ea1a';
+		}
+
+		 .fs-icon-note-checked:before {
+			content: '\ea1b';
+		}
+
+		 .fs-icon-note-mc:before {
+			content: '\ea1c';
+		}
+
+		 .fs-icon-o-clock:before {
+			content: '\ea1d';
+		}
+
+		 .fs-icon-o-clock2:before {
+			content: '\ea1e';
+		}
+
+		 .fs-icon-phone-mc:before {
+			content: '\ea1f';
+		}
+
+		 .fs-icon-upload-hhv:before {
+			content: '\ea20';
+		}
+
+		 .fs-icon-user2:before {
+			content: '\ea21';
+		}
+
+		 .fs-info:before {
+			content: '\ea22';
+		}
+
+		 .fs-like:before {
+			content: '\ea23';
+		}
+
+		 .fs-loading:before {
+			content: '\ea24';
+		}
+
+		 .fs-location:before {
+			content: '\ea25';
+		}
+
+		 .fs-lock:before {
+			content: '\ea26';
+		}
+
+		 .fs-notification:before {
+			content: '\ea27';
+		}
+
+		 .fs-pdf:before {
+			content: '\ea28';
+		}
+
+		 .fs-phone-ft:before {
+			content: '\ea29';
+		}
+
+		 .fs-phone:before {
+			content: '\ea2a';
+		}
+
+		 .fs-picture:before {
+			content: '\ea2b';
+		}
+
+		 .fs-rating:before {
+			content: '\ea2c';
+		}
+
+		 .fs-register:before {
+			content: '\ea2d';
+		}
+
+		 .fs-remove:before {
+			content: '\ea2e';
+		}
+
+		 .fs-sad:before {
+			content: '\ea2f';
+		}
+
+		 .fs-sp-menu:before {
+			content: '\ea30';
+		}
+
+		 .fs-star:before {
+			content: '\ea31';
+		}
+
+		 .fs-user:before {
+			content: '\ea32';
+		}
+
+		 .fs-zalo:before {
+			content: '\ea33';
+		}
+
+		

@@ -1,0 +1,339 @@
+.box-garbage-collection ul li{
+    list-style-type: none;
+}
+.box-garbage-collection a{
+    text-decoration: none;
+}
+.box-garbage-collection ul{
+    padding-left: unset;
+}
+.box-garbage-collection,.box-garbage-collection .box-content{
+    display: inline-block;
+    width: 100%;
+}
+.box-garbage-collection .box-content{
+    margin-top: 50px;
+}
+.box-garbage-collection .box-image-head{
+    background: url('../img/dia-diem-thu-hoi-rac/banners-dia-diem-thu-hoi-1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 240px;
+    background-size: cover;
+    width: 100%;
+    margin-top: 107px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+.box-garbage-collection .box-image-head .txt-text{
+    color: #fff;
+    display: inline-block;
+    font-size: 25px;
+}
+.box-garbage-collection .box-image-head .txt-text a{
+    color: #fff;
+}
+.box-garbage-collection .box-image-head .txt-text span{
+    font-size: 20px;
+}
+
+/*.box-garbage-collection .box-content .txt-title{
+       font-weight: 700;
+    color: #333333;
+    position: relative;
+    text-align: center;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    margin-bottom: 50px;
+    font-size: 60px;
+}*/
+/*.box-garbage-collection .box-content .txt-title:after{
+       content: '';
+    width: 100px;
+    height: 4px;
+    background: #333333;
+    position: absolute;
+        bottom: -8px;
+}*/
+.box-garbage-collection .list-address .txt-tile{
+    font-weight: 700;
+    font-size: 33px;
+    margin-bottom: 22px;
+}
+.box-garbage-collection .list-address .txt-tile:before{
+    content: '';
+    background: url(../img/dia-diem-thu-hoi-rac/icon-arrow.png);
+    width: 52px;
+    height: 25px;
+    display: inline-block;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.box-garbage-collection .list-address ol{
+    padding-left: 25px;
+}
+.box-garbage-collection .list-address ol li{
+        padding-left: 10px;
+        margin-bottom: 10px;
+}
+.box-garbage-collection .list-address{
+    margin-bottom: 50px;
+}
+.box-garbage-collection .box-end{
+background-color: #eaf6c4 !important;
+width: 100%;
+height: 200px;
+    display: flex;
+    align-items: center;
+}
+.image-present{
+    display: inline-block;
+    width: 100%;
+    height: 300px;
+    background: url(../img/cach-thuc-doi-diem/asset-1-1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.box-image-present{
+    margin: 55px 0px;
+}
+.txt-text{
+    font-size: 1.25rem;
+    line-height: 2rem;
+    color: #333333;
+}
+.box-exchange{
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    margin: 15px 0px 20px 0px;
+}
+.box-exchange .box-image-exchange {
+    display: inline-block;
+    width: 100%;
+    height: 50px;
+    background: url(../img/cach-thuc-doi-diem/asset-4.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.box-stall .box-stall-img{
+    display: inline-block;
+    width: 100%;
+    height: 633px;
+    background: url(../img/cach-thuc-doi-diem/asset-2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;  
+    margin: 30px 0px; 
+}
+.txt-tile{
+    font-weight: 700;
+    font-size: 33px;    
+}
+
+.txt-tile:before{
+    content: '';
+    background: url(../img/dia-diem-thu-hoi-rac/icon-arrow.png);
+    width: 52px;
+    height: 25px;
+    display: inline-block;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.box-procedure-img{
+    display: inline-block;
+    width: 100%;
+    height: 721px;
+    background: url(../img/cach-thuc-doi-diem/asset-3-1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;  
+    /*margin: 30px 0px; */
+}
+.box-category-collection-img{
+    display: inline-block;
+    width: 100%;
+    height: 321px;
+    background: url(../img/cach-thuc-doi-diem/asset-8.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;  
+    /*margin: 30px 0px; */
+}
+.txt-color-bule{
+    color: #8cc63e;
+}
+.text-condition{
+    font-weight: 700;
+        font-size: 22px;
+}
+.txt-address{
+        margin-top: 30px;
+    padding-left: 48px;
+    margin-bottom: 30px;
+}
+.box-update-img{
+    display: inline-block;
+    width: 100%;
+    height: 101px;
+    background: url(../img/cach-thuc-doi-diem/asset-7.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; 
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.box-more p{
+    padding-left: 56px;
+}
+.box-more h3{ 
+    margin-bottom: 30px;
+ }
+ .img-energy{
+    display: inline-block;
+    width: 100%;
+    height: 373px;
+    background: url(../img/cach-thuc-doi-diem/vntc-page-cdn-img-05.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+    float: left;
+ }
+ 
+ @media(max-width: 1200px){
+    .box-stall .box-stall-img {
+        height: 576px;
+        margin: 0px 0px;
+    }
+    .box-procedure-img {
+        height: 610px;
+    }
+    .box-garbage-collection .box-image-head{
+            margin-top: 99px;
+    }
+}
+ @media(max-width: 995px){
+    .box-image-present {
+        margin: 11px 0px;
+    }
+    .box-stall .box-stall-img {
+        height: 429px;
+    }
+    .box-procedure-img {
+        height: 477px;
+    }
+    .box-category-collection-img {
+        height: 231px;
+    }
+    .box-garbage-collection .box-content {
+        margin-top: 10px;
+    }
+    .box-garbage-collection .list-address {
+        margin-bottom: 14px;
+    }
+    .box-update-img {
+        height: 63px;
+    }
+    .txt-tile {
+        font-weight: 700;
+        font-size: 24px;
+    }
+}
+@media(max-width:  920px){
+    .img-energy {
+        height: 157px;
+        /*background-size: contain;*/
+    }
+}
+@media(max-width:  770px){
+   .image-present {
+        height: 229px;
+    }
+    .txt-text {
+        font-size: 15px;
+    }
+    .box-stall .box-stall-img {
+        height: 292px;
+    }
+    .txt-tile:before {
+        width: 47px;
+        height: 18px;
+    }
+    .txt-tile {
+        font-size: 20px;
+    }
+    .box-procedure-img {
+        height: 348px;
+    }
+    .box-category-collection-img {
+        height: 175px;
+    }
+    .txt-address {
+        margin-top: 13px;
+        padding-left: 48px;
+        margin-bottom: 21px;
+    }
+    .list-address-content{
+            font-size: 16px;
+    }
+    .list-address-content h3{
+         font-size: 20px;
+    }
+    .box-update-img {
+        height: 53px;
+    }
+}
+@media(max-width:  770px){
+
+    .box-garbage-collection .box-image-head .txt-text {
+        font-size: 16px;
+    }
+    .image-present {
+        height: 167px;
+    }
+    .box-stall .box-stall-img {
+        height: 207px;
+    }
+    .box-procedure h3.txt-tile{
+            margin-top: 13px;
+    }
+    .box-procedure-img {
+        height: 261px;
+    }
+    .box-category-collection-img {
+        height: 124px;
+    }
+    .txt-tile:before {
+        width: 35px;
+        height: 13px;
+    }
+    .txt-tile {
+        font-size: 16px;
+    }
+    .list-address-content h3 {
+        font-size: 20px;
+    }
+    .box-garbage-collection .list-address ol li {
+        font-size: 15px;
+    }
+    .box-update-img {
+        margin-top: 14px;
+        margin-bottom: 14px;
+    }
+    .box-more h3 {
+        margin-bottom: 9px;
+    }
+    .box-more p {
+        padding-left: 56px;
+        margin-bottom: 0px;
+    }
+    .box-garbage-collection .box-image-head {
+        margin-top: 70px;
+    }
+}
