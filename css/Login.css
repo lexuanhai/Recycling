@@ -523,3 +523,19 @@ form.sign-in-form {
         left: 50%;
     }
 }*/
+
+@media(max-width:  770px){
+    .title {
+        font-size: 23px;
+        color: #444;
+        margin-bottom: 10px;
+    }
+    form.sign-in-form {
+        z-index: 2;
+        padding-right:  unset;
+        padding: 0 27px;
+    }
+    form.sign-up-form{
+            padding: 0px 20px !important;
+    }
+}
