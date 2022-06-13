@@ -257,6 +257,7 @@ a{
     height: 100%;
     -o-object-fit: cover;
     object-fit: cover;
+    width: 100%;
 }
 .endow-telecom__detail {
     padding: 15px;
@@ -1008,10 +1009,85 @@ select.form-control-plus {
     }
     
 }
-@media(max-width: 1024px){
+@media(max-width: 1220px){
    .box-baner .image-banner {
         background-size: contain;
-        height: 350px;
+         height: 350px;
     }
 }
 
+@media(max-width: 1024px){
+   .endow-telecom__content {
+        display: inline-block;
+        width: 100%;
+    }
+    .endow-telecom__list{
+        display: inline-block;
+        width: 100%;
+        -webkit-justify-content: unset;
+        -webkit-box-pack:  unset;
+
+    }
+    .endow-telecom__item{
+        float: left;
+        width: calc(100% / 3 - 16px);
+        margin-bottom: 31px;
+    }
+    .endow-link__item{
+            flex: 0 0 calc(100% / 3 - 16px);
+            width: calc(100% / 3 - 16px);
+    }
+}
+@media(max-width: 920px){
+  .bg-full:before {
+        display: none;
+    }
+}
+@media(max-width: 775px){
+  .box-baner {
+        margin-top: 100px;
+    }
+    .box-baner .image-banner {
+        height: 272px;
+    }
+    .benefit-member {
+        margin-top: 45px;
+    }
+    .endow-telecom__item {
+        width: calc(100% / 2 - 16px);
+    }
+    .endow-telecom__content {
+         margin-bottom: unset;
+    }
+    .endow-link__item {
+        flex: 0 0 calc(100% / 2 - 16px);
+        width: calc(100% / 2 - 16px);
+    }
+    .sort-custom__form{
+        margin-bottom: 10px;
+    }
+    .sort-custom__form .form-select-plus {
+        margin-bottom: 10px;
+    }
+    .sort-custom__info {
+        margin: 0 10px 10px 0;
+    }
+    .faq-plus__name , .faq-plus__name{
+        font-size: 12px;
+    }
+    .faq-plus__info{
+            margin: 25px 0 20px;
+    }
+    .faq-plus__top{
+        height: 89px;
+    }
+}
+@media (max-width: 480px){
+    .faq-plus__top {
+        height: 106px;
+        padding: 0px 18px;
+    }
+    .box-baner {
+        margin-top: 67px;
+    }
+}

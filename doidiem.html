@@ -41,11 +41,9 @@
 </head>
 
 <body>
-     <!-- <link href="./css/header.css" rel="stylesheet">
-    <link href="./css/doidiem.css" rel="stylesheet"> -->
-    <nav class="navbar box-menu navbar-expand-md navbar-light bg-light sticky-top">
-        <div class="container">
-            <div class="container-fluid box-head">
+      <nav class="navbar box-menu navbar-expand-md navbar-light bg-light sticky-top">
+      <div class="container">
+         <div class="container-fluid box-head">
                 <a class="navbar-branch logo" href="index.html">
                     <!-- <img src="img/banner/Logo2.png" height="50"> -->
                 </a>
@@ -84,18 +82,7 @@
                             </ul>
                         </li>
                         <li class="nav-item lisanpham">
-                            <!-- <a class="nav-link" href="dangnhap.html">ĐĂNG NHẬP/ĐĂNG KÝ</a> -->
-                             <a class="nav-link" href="dangnhap.html">SẢN PHẨM
-                               <!--  <i class="fa fa-chevron-down" aria-hidden="true"></i> -->
-                             </a>
-                                    <!-- <ul class="sub_menu">
-                                        <li class="">
-                                            <a href="doidiem.html" title="Sản phẩm - Style 1"> 
-                                                ĐĂNG KÝ
-                                            </a>
-                                        </li>
-
-                                    </ul> -->
+                             <a class="nav-link" href="dangnhap.html">SẢN PHẨM</a>
                         </li>
                     </ul>
                 </div>
@@ -105,11 +92,70 @@
                         <a href="">Đăng Ký</a>
                         <a href="">Đăng Nhập</a>
                     </div>
+                    <a href="#" class="icon-search">
+                        <i class="fas fa-search" style="color: black"></i>
+                    </a>
+                    <a style="color: #272727" href="#" uk-toggle="target: #offcanvas-flip2">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                    <div class="box-menu-mobile">
+                        <button class="navbar-toggler customm-nav" type="button" data-toggle="collapse" data-target="#boxSearch" aria-expanded="false" aria-controls="collapseExample" >
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div id="boxSearch" uk-offcanvas="flip: true; overlay: true" class="uk-offcanvas uk-offcanvas-overlay box-items-mobile collapse">
+   <div class="uk-offcanvas-bar uk-offcanvas-bar-animation uk-offcanvas-slide" style="background: white;
+      width: 350px;">
+<button class="uk-offcanvas-close uk-icon uk-close" style="color:#272727" type="button" data-toggle="collapse" data-target="#boxSearch"  aria-controls="collapseExample">
+         <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" data-svg="close-icon">
+            <line fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line>
+            <line fill="none" stroke="#000" stroke-width="1.1" x1="13" y1="1" x2="1" y2="13"></line>
+         </svg>
+      </button>
+      
+      <div class="justify-content-md-center">
+         <ul class="navbar-nav lst-items-mobile">
+            <li class="nav-item">
+               <a class="nav-link" href="index.html">TRANG CHỦ</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="Product.html">BỘ SƯU TẬP</a>
+            </li>
+            <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               Sản phẩm
+               </a>
+               <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="border:0;">
+                  <a class="dropdown-item" href="detailproduct.html" title="Sản phẩm - Style 1">Sản phẩm - Style 1</a>
+                  <a class="dropdown-item" href="detailproduct.html" title="Sản phẩm - Style 2">Sản phẩm - Style 2</a>
+                  <a class="dropdown-item" href="detailproduct.html" title="Sản phẩm - Style 3">Sản phẩm - Style 3</a>
+               </div>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="introduce.html">GIỚI THIỆU</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="blog.html">BLOG</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="Contact.html">LIÊN HỆ</a>
+            </li>
+         </ul>
+      </div>
+   </div>
+</div>
+                    </div>
+
+
                 </div>
+                
+
+
             </div>
-        </div>
+      </div>
        
     </nav>
+
     <section class="box-baner">
         <div class="container">
             <div class="image-banner"></div>
