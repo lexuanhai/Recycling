@@ -18,16 +18,15 @@ namespace WEBSITE.Data.DatabaseEntity
         [Column(TypeName ="varchar(12)")]        
         public string Phone { get; set; }
         [Column(TypeName = "varchar(250)")]
-        //public string Email { get; set; }
-        public DateTime? Birthday { get; set; }
         public string Address { get; set; }
         public string City { get; set; }  
+        public int? TotalPoint { get; set; }
         public string Avartar { get; set; }
         public StaffStatus Status { get; set; }
         [Column(TypeName = "varchar(max)")]
         public string UserName { get; set; }
         [Column(TypeName = "varchar(max)")]
         public string PassWord { get; set; }
-        public bool IsDeleted { get; set; }
+        public bool? IsDeleted { get; set; }
    }
 }

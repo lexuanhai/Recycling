@@ -22,48 +22,62 @@
         <div class="modal-content">
             <form action="#" method="#" id="formSubmitAdd">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Thêm mới nhân viên </h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Danh sách đổi điểm </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
+                    <table class="table table-bordered table-hover dataTable dtr-inline">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Category</th>
+                                <th>Total</th>
+                                <th>Point</th>                                
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="tblDataProduct">
+                        </tbody>
+                    </table>
 
-                    <div class="row">
-                        <div class="form-group col-6">
-                            <label>Họ và tên</label>
-                            <input type="text" class="form-control fullname" placeholder="Họ và tên" name="fullname">
-                        </div>
-                        <div class="form-group col-6">
-                            <label>Tên đăng nhập</label>
-                            <input type="text" class="form-control username" placeholder="Tên đăng nhập" name="username">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-6">
-                            <label>Phone</label>
-                            <input type="text" class="form-control phone" placeholder="Phone" name="phone" >
-                        </div>
-                        <div class="form-group col-6">
-                            <label>Email</label>
-                            <input type="email" class="form-control email" name="email" placeholder="name@example.com">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-6">
-                            <label>Ngày sinh</label>
-                            <input type="text" id="dpicker" class="form-control txtbirth" name="birth" placeholder="Ngày sinh"/>
-                        </div>
-                        <div class="form-group col-6">
-                            <label>Địa chỉ</label>
-                            <input type="text" class="form-control address" placeholder="Địa chỉ" name="address">
-                        </div>
-                    </div>
+                    @*<div class="row">
+            <div class="form-group col-6">
+                <label>Họ và tên</label>
+                <input type="text" class="form-control fullname" placeholder="Họ và tên" name="fullname">
+            </div>
+            <div class="form-group col-6">
+                <label>Tên đăng nhập</label>
+                <input type="text" class="form-control username" placeholder="Tên đăng nhập" name="username">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-6">
+                <label>Phone</label>
+                <input type="text" class="form-control phone" placeholder="Phone" name="phone" >
+            </div>
+            <div class="form-group col-6">
+                <label>Email</label>
+                <input type="email" class="form-control email" name="email" placeholder="name@example.com">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-6">
+                <label>Ngày sinh</label>
+                <input type="text" id="dpicker" class="form-control txtbirth" name="birth" placeholder="Ngày sinh"/>
+            </div>
+            <div class="form-group col-6">
+                <label>Địa chỉ</label>
+                <input type="text" class="form-control address" placeholder="Địa chỉ" name="address">
+            </div>
+        </div>*@
                 </div>
-                <div class="modal-footer">
+                @*<div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
                     <button type="submit" class="btn btn-primary">Lưu</button>
-                </div>
+                </div>*@
             </form>
         </div>
     </div>

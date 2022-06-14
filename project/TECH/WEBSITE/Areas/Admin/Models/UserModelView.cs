@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WEBSITE.Data.DatabaseEntity;
 
 namespace WEBSITE.Areas.Admin.Models
 {
@@ -16,5 +17,8 @@ namespace WEBSITE.Areas.Admin.Models
         public string Phone { get; set; }
         public string Address { get; set; }
         public DateTime? Birthday { get; set; }
+        public int? TotalPoint { get; set; }
+
+        public List<ProductModelView> Products { get; set; }
     }
 }

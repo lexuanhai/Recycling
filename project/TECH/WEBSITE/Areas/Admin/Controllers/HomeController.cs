@@ -8,7 +8,7 @@ using WEBSITE.Extensions;
 
 namespace WEBSITE.Areas.Admin.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class HomeController : BaseController
     {
         public IActionResult Index()

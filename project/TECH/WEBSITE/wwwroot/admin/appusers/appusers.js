@@ -12,13 +12,17 @@
                 html += "<td>" + item.UserName + "</td>";
                 html += "<td>" + item.Name + "</td>";
                 html += "<td>" + item.Phone + "</td>";
-                html += "<td>" + item.Email + "</td>";
-                html += "<td>" + (item.Birthday != null ? self.FormatDate(item.Birthday) : "") + "</td>";
+                html += "<td>" + item.Email + "</td>";                
                 html += "<td>" + item.Address + "</td>";
-                html += "<td><div class\"btn-group\">" +
-                    "<a class=\"btn btn-outline-danger btn-xs mr-1\" href=\"javascript:Update('"+item.Id+"')\"><i class=\"fas fa-pencil-alt\"></i> </a>" +
-                    "<a class=\"btn btn-outline-danger btn-xs\" href=\"javascript:Deleted('" + item.Id +"')\"><i class=\"fas fa-trash-alt\"></i> </a>"
-                "</div></td> ";
+                html += "<td>" + item.TotalPoint + "</td>";
+                if (item.Products != null && item.Products.length > 0) {
+                    html += "<td><div class\"btn-group\">" +
+
+                        "<a class=\"btn btn-outline-danger btn-xs mr-1\" href=\"javascript:GetProducts(" + item.Id + ")\"><i class=\"fas fa-pencil-alt\"></i> </a>" +
+
+                        "</div></td> ";
+                }
+               
                 html += "</tr>";
             }
         }
@@ -27,6 +31,34 @@
         }
         $("#tblData").html(html);
     };
+    self.GetProducts = function (idUser) {
+        if (self.Data != null && self.Data.length > 0) {
+            var data = self.Data.find(p => p.Id == idUser);
+            if (data != null) {
+                var html = "";
+                for (var i = 0; i < data.Products.length; i++) {
+                    html += "<tr>";
+                    var item = data.Products[i];
+                    html += "<td>" + item.Name + "</td>";
+                    html += "<td>" + item.Price + "</td>";
+                    html += "<td>" + item.Category + "</td>";
+                    html += "<td>" + item.Total + "</td>";
+                    html += "<td>" + item.TotalPoint + "</td>";
+                    //if (item.Products != null && item.Products.length > 0) {
+                    //    html += "<td><div class\"btn-group\">" +
+
+                    //        "<a class=\"btn btn-outline-danger btn-xs mr-1\" href=\"javascript:GetProducts(" + item.Id + ")\"><i class=\"fas fa-pencil-alt\"></i> </a>" +
+
+                    //        "</div></td> ";
+                    //}
+
+                    html += "</tr>";
+                }
+                $("#tblDataProduct").html(html);
+                $('#_add').modal('show');
+            }
+        }
+    }
 
     self.Update = function (id) {
         if (id != null && id != "") {
@@ -120,9 +152,7 @@
                 //Loading('hiden');
             },
             success: function (response) {
-                if (response.IsData) {
-                    self.Data = response.Data;
-                }
+                self.Data = response.data;
                 self.RenderTableHtml();
                 Loading('hiden');
             }
@@ -237,13 +267,13 @@
 
 
     $(document).ready(function () {
-        GetData();
-        $("#dpicker").datepicker();
-        self.FormSubmitAdd();
+         GetData();
+        //$("#dpicker").datepicker();
+        //self.FormSubmitAdd();
 
-        $(".modal").on("hidden.bs.modal", function () {
-            $(this).find('form').trigger('reset');
-        });
+        //$(".modal").on("hidden.bs.modal", function () {
+        //    $(this).find('form').trigger('reset');
+        //});
 
     });
 

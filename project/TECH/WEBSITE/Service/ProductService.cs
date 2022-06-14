@@ -59,7 +59,7 @@ namespace WEBSITE.Service
                         Total = view.Total,
                         Price = view.Price,
                         ReducedPrice = view.ReducedPrice,
-                        BrandsId = view.BrandsId,                        
+                        //BrandsId = view.BrandsId,                        
                     };
                     _productRepository.Add(_product);
                     Save();
@@ -92,7 +92,7 @@ namespace WEBSITE.Service
                     dataServer.Total = view.Total;
                     dataServer.Price = view.Price;
                     dataServer.ReducedPrice = view.ReducedPrice;
-                    dataServer.BrandsId = view.BrandsId;  
+                    //dataServer.BrandsId = view.BrandsId;  
                     _productRepository.Update(dataServer);
                     Save();
                     return true;

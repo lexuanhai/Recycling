@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WEBSITE.Areas.Admin.Models;
+using WEBSITE.Areas.Admin.Models.Search;
 using WEBSITE.Service;
 
 namespace WEBSITE.Areas.Admin.Controllers
@@ -15,8 +16,17 @@ namespace WEBSITE.Areas.Admin.Controllers
         {
             _userService = userService;
         }
-
-
+        [HttpGet]
+        public IActionResult Index()
+        {
+            return View();
+        }
+        [HttpGet]
+        public JsonResult GetAll()
+        {
+            var data = _userService.GetAll();
+            return Json(new { data = data });
+        }
     }
     //public class AppUsersController : BaseController
     //{

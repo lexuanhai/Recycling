@@ -89,18 +89,22 @@ namespace WEBSITE
             //services.AddScoped<IUserClaimsPrincipalFactory<Staff>, CustomClaimsPrincipalFactory>();
             services.AddTransient<ICategoryRepository, CategoryRepository>();
             //services.AddTransient<IColorRepository, ColorRepository>();
-            services.AddTransient<IImagesProductRepository, ImagesProductRepository>();
+           // services.AddTransient<IImagesProductRepository, ImagesProductRepository>();
             services.AddTransient<IProductRepository, ProductRepository>();
-            services.AddTransient<IBrandsRepository, BrandsRepository>();
+            services.AddTransient<IAppUserRepository, AppUserRepository>();
+            services.AddTransient<IAppUserProductRepository, AppUserProductRepository>();
+            // services.AddTransient<IBrandsRepository, BrandsRepository>();
 
             // service
             //services.AddTransient<IUserService, UserService>();
             //services.AddTransient<IRoleService, RoleService>();
             services.AddTransient<ICategoryService, CategoryService>();
             //services.AddTransient<IColorsService, ColorsService>();
-            services.AddTransient<IImagesProductService, ImagesProductService>();
+            //services.AddTransient<IImagesProductService, ImagesProductService>();
             services.AddTransient<IProductService, ProductService>();
-            services.AddTransient<IBrandsService, BrandsService>();
+            services.AddTransient<IUserService, UserService>();
+            //services.AddTransient<IUserAppProductService, UserService>();
+            //services.AddTransient<IBrandsService, BrandsService>();
 
         }
 

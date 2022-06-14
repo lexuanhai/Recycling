@@ -16,8 +16,8 @@ namespace WEBSITE.Areas.Admin.Models
         public decimal? ReducedPrice { get; set; }
         public int? Total { get; set; }
         public int? CategoryId { get; set; }
-        public int? BrandsId { get; set; }
         public bool Status { get; set; }
+        public int? TotalPoint { get; set; }
         public bool IsDeleted { get; set; }
     }
 }

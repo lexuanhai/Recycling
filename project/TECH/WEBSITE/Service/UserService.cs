@@ -13,10 +13,8 @@ namespace WEBSITE.Service
 {
     public interface IUserService
     {
-        //List<UserModelView> GetAll();
-        PagedResult<UserModelView> GetAllPaging(AppUserViewModelSearch appUserViewModelSearch);
-        //List<UserModelView> GetAllParent();
-        //List<UserModelView> GetCategoryByParentId(int parentId);
+        List<UserModelView> GetAll();
+        PagedResult<UserModelView> GetAllPaging(AppUserViewModelSearch appUserViewModelSearch);        
         UserModelView GetById(int id);
         bool Add(UserModelView view);
         bool Update(UserModelView view);
@@ -26,32 +24,65 @@ namespace WEBSITE.Service
     public class UserService : IUserService
     {
         private readonly IAppUserRepository _userService;
+        private readonly IProductRepository _productRepository;
+        private readonly IAppUserProductRepository _appUserProductRepository;
         private IUnitOfWork _unitOfWork;
-        public UserService(IAppUserRepository userService, IUnitOfWork unitOfWork)
+        public UserService(IAppUserRepository userService,
+            IAppUserProductRepository appUserProductRepository,
+            IProductRepository productRepository,
+            IUnitOfWork unitOfWork)
         {
             _userService = userService;
             _unitOfWork = unitOfWork;
+            _appUserProductRepository = appUserProductRepository;
+            _productRepository = productRepository;
         }
-        //public List<UserModelView> GetAll()
-        //{
-        //    var dataModel = _userService.FindAll().Select(c => new UserModelView()
-        //    {
-        //        Id = c.Id,
-        //        Name = c.Name,
-        //        //ParentName = (c.ParentId.HasValue && c.ParentId.Value > 0 ? _userService.FindById(c.ParentId.Value).Name :"") 
-        //    }).ToList();
-        //    if (dataModel != null && dataModel.Count > 0)
-        //    {
-        //        foreach (var item in dataModel)
-        //        {
-        //            if (item.ParentId.HasValue && item.ParentId.Value > 0)
-        //            {
-        //                item.ParentName = dataModel.FirstOrDefault(c => c.Id == item.ParentId.Value).Name;
-        //            }
-        //        }
-        //    }
-        //    return dataModel;
-        //}
+        public List<UserModelView> GetAll()
+        {
+            var dataModel = _userService.FindAll().Select(c => new UserModelView()
+            {
+                Id = c.Id,
+                Name = c.Name,
+                UserName = c.UserName,
+                Phone = c.Phone,
+                Address = c.Address,
+                TotalPoint = c.TotalPoint
+            }).ToList();
+
+            if (dataModel != null && dataModel.Count > 0)
+            {
+                var appUserProductModel = _appUserProductRepository.FindAll().ToList();
+                if (appUserProductModel != null && appUserProductModel.Count > 0)
+                {
+                    foreach (var item in dataModel)
+                    {
+                        var _appUserProduct = appUserProductModel.Where(au => au.AppUserId == item.Id).ToList();
+
+                        if (_appUserProduct != null && _appUserProduct.Count > 0)
+                        {
+                            item.Products = new List<ProductModelView>();
+                            foreach (var item_appUserProduct in _appUserProduct)
+                            {
+                                var _product = _productRepository.FindAll().Where(p => p.Id == item_appUserProduct.ProductId).Select(p=> new ProductModelView() {
+                                    Name = p.Name,
+                                    Decription = p.Decription,
+                                    SubDecription = p.SubDecription,
+                                    CategoryId = p.CategoryId,
+                                    Total = p.Total,
+                                    Price = p.Price,
+                                    ReducedPrice = p.ReducedPrice,
+                                    TotalPoint = p.Point                                    
+                                }).FirstOrDefault();
+                                item.Products.Add(_product);
+                            }                           
+                        }
+                    }
+                }
+               
+            }
+
+            return dataModel;
+        }
         //public List<UserModelView> GetAllParent()
         //{
         //    return _userService.FindAll().Where(c => !c.ParentId.HasValue).Select(c => new UserModelView()

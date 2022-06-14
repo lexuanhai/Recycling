@@ -22,14 +22,14 @@ namespace WEBSITE.Areas.Admin.Controllers
     {
         private readonly IHostingEnvironment _hostingEnvironment;
         private readonly IProductService _productService;
-        private readonly IImagesProductService _imagesProductService;
+        //private readonly IImagesProductService _imagesProductService;
 
         public ProductController(IProductService productService,
-            IImagesProductService imagesProductService,
+            //IImagesProductService imagesProductService,
             IHostingEnvironment hostingEnvironment)
         {
             _productService = productService;
-            _imagesProductService = imagesProductService;
+            //_imagesProductService = imagesProductService;
             _hostingEnvironment = hostingEnvironment;
         
         }

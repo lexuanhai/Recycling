@@ -10,32 +10,32 @@ namespace WEBSITE.Data.DatabaseEntity
     public class DataBaseEntityContext:DbContext
     {
         public DataBaseEntityContext(DbContextOptions<DataBaseEntityContext> options) : base(options) { }
-        
+        public DbSet<AppRoles> AppRoles { set; get; }
+        public DbSet<AppUsers> AppUsers { set; get; }
         public DbSet<Category> Categories { set; get; }
-        public DbSet<Brands> Brands { set; get; }
-        public DbSet<ImagesProduct> ImagesProduct { set; get; }
         public DbSet<Product> Product { set; get; }
+        public DbSet<AppUsersProduct> AppUsersProduct { set; get; }
         //public DbSet<Roles> Roles { set; get; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);            
         }
 
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            base.OnModelCreating(builder);
-            // Bỏ tiền tố AspNet của các bảng: mặc định các bảng trong IdentityDbContext có
-            // tên với tiền tố AspNet như: AspNetUserRoles, AspNetUser ...
-            // Đoạn mã sau chạy khi khởi tạo DbContext, tạo database sẽ loại bỏ tiền tố đó
-            foreach (var entityType in builder.Model.GetEntityTypes())
-            {
-                var tableName = entityType.GetTableName();
-                if (tableName.StartsWith("AspNet"))
-                {
-                    entityType.SetTableName(tableName.Substring(6));
-                }
-            }
-        }
+        //protected override void OnModelCreating(ModelBuilder builder)
+        //{
+        //    base.OnModelCreating(builder);
+        //    // Bỏ tiền tố AspNet của các bảng: mặc định các bảng trong IdentityDbContext có
+        //    // tên với tiền tố AspNet như: AspNetUserRoles, AspNetUser ...
+        //    // Đoạn mã sau chạy khi khởi tạo DbContext, tạo database sẽ loại bỏ tiền tố đó
+        //    foreach (var entityType in builder.Model.GetEntityTypes())
+        //    {
+        //        var tableName = entityType.GetTableName();
+        //        if (tableName.StartsWith("AspNet"))
+        //        {
+        //            entityType.SetTableName(tableName.Substring(6));
+        //        }
+        //    }
+        //}
 
         // Tạo database
         //public void CreateDatabase()
