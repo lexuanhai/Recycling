@@ -13,12 +13,12 @@ using WEBSITE.Service;
 
 namespace WEBSITE.Controllers
 {
-    public class ProductsController : Controller
+    public class CartController : Controller
     {
         private readonly IProductService _productService;
         private readonly IUserService _userService;
         public IHttpContextAccessor _httpContextAccessor;
-        public ProductsController(IProductService productService,
+        public CartController(IProductService productService,
             IUserService userService,
             IHttpContextAccessor httpContextAccessor)
         {
@@ -31,6 +31,7 @@ namespace WEBSITE.Controllers
         {
             return View();
         }
+
        public IActionResult About()
        {
             return View();
@@ -81,18 +82,7 @@ namespace WEBSITE.Controllers
             });
 
         }
-        //public IActionResult ProductDetail(int id)
-        //{
-        //    var model = new ProductModelView();
-        //    if (id > 0)
-        //    {
-        //        if (id > 0)
-        //        {
-        //            model = _productService.GetById(id);
-        //        }
-        //    }
-        //    return View(model);
-        //}
+       
 
     }
 }

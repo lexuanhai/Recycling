@@ -44,6 +44,15 @@
 
     <title>Recyclable Waste | Tái Chế Rác</title>
     @RenderSection("Styles", required: false)
+<style>
+    .item-sub_menu.active {
+        border-bottom: 1px solid #78be21;
+        
+    }
+        .item-sub_menu.active a {
+            color: #78be21 !important;
+        }
+</style>
 </head>
 <body>
     <nav class="navbar box-menu navbar-expand-md navbar-light bg-light sticky-top">
@@ -57,29 +66,29 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="/home/index">TRANG CHỦ</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item about">
                             <a class="nav-link" href="/home/about">GIỚI THIỆU</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item contact">
                             <a class="nav-link" href="/home/contact">LIÊN HỆ</a>
                         </li>
-                        <li class="nav-item lisanpham">
+                        <li class="nav-item accumulate lisanpham">
                             <a class="nav-link" href="javascript:void(0)">
                                 TÍCH ĐIỂM-ĐỔI THƯỞNG
                                 <i class="fa fa-chevron-down" aria-hidden="true"></i>
                             </a>
                             <ul class="sub_menu">
-                                <li class="">
+                                <li class="item-sub_menu exchange-points">
                                     <a href="/ExchangePoints/index" title="">
                                         ĐỔI ĐIỂM RECYCLABLE WASTE
                                     </a>
                                 </li>
-                                <li class="">
+                                <li class="item-sub_menu redeem-points">
                                     <a href="/RedeemPoints/index">
                                         CÁCH THỨC ĐỔI ĐIỂM
                                     </a>
                                 </li>
-                                <li class="">
+                                <li class="item-sub_menu point-address">
                                     <a href="/RedeemPoints/PointAddress">
                                         ĐỊA ĐIỂM ĐỔI ĐIỂM
                                     </a>
@@ -87,7 +96,7 @@
 
                             </ul>
                         </li>
-                        <li class="nav-item lisanpham">
+                        <li class="nav-item products lisanpham">
                             <a class="nav-link" href="/Products/index">SẢN PHẨM</a>
                         </li>
                     </ul>
@@ -104,8 +113,8 @@
                             <i class="fas fa-user-alt"></i>
                         </a>    
                         <div class="dropdown-content-login-out">
-                            <a href="">Đăng Ký</a>
-                            <a href="/L">Đăng Nhập</a>
+                            @*<a href="">Đăng Ký</a>*@
+                            <a href="/AcountUser/Login">Đăng Nhập</a>
                         </div>
                     }
 
@@ -114,7 +123,7 @@
                     <a href="#" class="icon-search">
                         <i class="fas fa-search" style="color: black"></i>
                     </a>
-                    <a style="color: #272727" href="#" uk-toggle="target: #offcanvas-flip2">
+                    <a style="color: #272727" href="/cart" uk-toggle="target: #offcanvas-flip2">
                         <i class="fas fa-shopping-cart"></i>
                     </a>
                     <div class="box-menu-mobile">
@@ -250,5 +259,38 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
+<script type="text/javascript">
+    $(document).ready(function () {
+        var _href = window.location.href.toLowerCase();
+        if (_href.indexOf("about") >= 0) {
+            $(".nav-item,.item-sub_menu").removeClass("active");
+            $(".about").addClass("active");
+        } else if (_href.indexOf("contact") >=0) {
+            $(".nav-item,.item-sub_menu").removeClass("active");
+            $(".contact").addClass("active");
+        }
+        else if (_href.indexOf("exchangepoints") >= 0) {
+            $(".nav-item,.item-sub_menu").removeClass("active");
+
+            $(".accumulate,.exchange-points").addClass("active");
+        }
+        else if (_href.indexOf("redeempoints/index") >= 0) {
+            $(".nav-item,.item-sub_menu").removeClass("active");
+
+            $(".accumulate,.redeem-points").addClass("active");
+        }
+        else if (_href.indexOf("redeempoints/pointaddress") >= 0) {
+            $(".nav-item,.item-sub_menu").removeClass("active");
+
+            $(".accumulate,.point-address").addClass("active");
+        }
+        else if (_href.indexOf("products") >= 0) {
+            $(".nav-item,.item-sub_menu").removeClass("active");
+
+            $(".products").addClass("active");
+        }
+
+    })
+</script>
 </body>
 </html>

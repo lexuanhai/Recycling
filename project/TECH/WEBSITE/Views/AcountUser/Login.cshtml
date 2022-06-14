@@ -1,0 +1,130 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Styles{
+    <link href="~/web/css/Login.css" rel="stylesheet">
+}
+<div class="box-content">
+    <div class="container">
+        <div class="forms-container">
+            <div class="signin-signup">
+                <form class="sign-in-form" id="FormLogin">
+                    <h2 class="title">Đăng nhập</h2>
+                    <div class="input-field">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" placeholder="Tên đăng nhập" name="siginUserName">
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="Mật khẩu" name="siginPassWord">
+                    </div>
+
+                    <input type="submit" value="Đăng nhập" class="btn solid" href="doidiem.html">
+
+                    <!-- <p class="social-text">Hoặc đăng nhập bằng hình thức khác</p>
+                    <div class="social-media">
+                        <a href="#" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-google"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-instagram-square"></i></a>
+                    </div> -->
+                </form>
+                <form action="#" class="sign-up-form">
+                    <h2 class="title">Đăng ký</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Tên đăng nhập" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="Email" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Mật khẩu" />
+                    </div>
+                    <input type="submit" class="btn" value="Đăng ký" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="panels-container">
+    <div class="panel left-panel">
+        <div class="content">
+            <h3>Recyclable Waste</h3>
+            <p>
+                Hãy trở thành một phần cho cộng đồng, hãy chung tay góp phần bảo vệ môi trường.
+            </p>
+            <button class="btn transparent" id="sign-up-btn">
+                Đăng ký
+            </button>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script src="~/web/js/app.js?v=@DateTime.Now"></script>
+    <script src="/admin/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".site-footer").hide();
+
+            $('#FormLogin').validate({
+                rules: {
+                    siginUserName: {
+                        required: true,
+                    },
+                    siginPassWord: {
+                        required: true,
+                    }
+                },
+                messages: {
+                    siginUserName: {
+                        required: "Bạn chưa nhập tên đăng nhập",
+                    },
+                    siginPassWord: {
+                        required: "Bạn chưa nhập mật khẩu",
+                    }
+
+                },
+                submitHandler: function () {
+                    $.ajax({
+                        url: '/AcountUser/Login',
+                        type: 'POST',
+                        data: {
+                            userView: {
+                                UserName: $("input[name=siginUserName]").val(),
+                                PassWord: $("input[name=siginPassWord]").val(),
+                            }
+                        },
+                        dataType: 'json',
+                        beforeSend: function () {
+                            //Loading('show');
+                        },
+                        complete: function () {
+                            //Loading('hiden');
+                        },
+                        success: function (response) {
+                            console.log(response);
+                            if (response.data != null) {
+                                window.location.href = "/Home/Index";
+                            }
+                            else {
+                                alert("đăng nhập không thành công");
+                            }
+
+                        }
+                    })
+                }
+            });
+        });
+
+    </script>
+}
+
+

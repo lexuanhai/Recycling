@@ -15,7 +15,8 @@ namespace WEBSITE.Service
     {
         List<UserModelView> GetAll();
         UserModelView GetUserByUserName(string userName,string password);
-        PagedResult<UserModelView> GetAllPaging(AppUserViewModelSearch appUserViewModelSearch);        
+        PagedResult<UserModelView> GetAllPaging(AppUserViewModelSearch appUserViewModelSearch);
+        void UpdatePointUser(int id, int point);
         UserModelView GetById(int id);
         bool Add(UserModelView view);
         bool Update(UserModelView view);
@@ -24,23 +25,36 @@ namespace WEBSITE.Service
     }
     public class UserService : IUserService
     {
-        private readonly IAppUserRepository _userService;
+        private readonly IAppUserRepository _appUserRepository;
         private readonly IProductRepository _productRepository;
         private readonly IAppUserProductRepository _appUserProductRepository;
         private IUnitOfWork _unitOfWork;
         public UserService(IAppUserRepository userService,
             IAppUserProductRepository appUserProductRepository,
-            IProductRepository productRepository,
+            IAppUserRepository appUserRepository,
+        IProductRepository productRepository,
             IUnitOfWork unitOfWork)
         {
-            _userService = userService;
+            _appUserRepository = appUserRepository;
             _unitOfWork = unitOfWork;
             _appUserProductRepository = appUserProductRepository;
             _productRepository = productRepository;
         }
+        public void UpdatePointUser(int id, int point)
+        {
+            var dataServer = _appUserRepository.FindAll().Where(u=>u.Id ==id).FirstOrDefault();
+            if (dataServer != null)
+            {
+                dataServer.TotalPoint = point;
+            }
+            _appUserRepository.Update(dataServer);
+
+            Save();
+
+        }
         public UserModelView GetUserByUserName(string userName, string password)
         {
-            var data = _userService.FindAll().Where(u => u.UserName == userName && u.PassWord == password).Select(c => new UserModelView()
+            var data = _appUserRepository.FindAll().Where(u => u.UserName == userName && u.PassWord == password).Select(c => new UserModelView()
             {
                 Id = c.Id,
                 Name = c.Name,
@@ -55,7 +69,7 @@ namespace WEBSITE.Service
         }
         public List<UserModelView> GetAll()
         {
-            var dataModel = _userService.FindAll().Select(c => new UserModelView()
+            var dataModel = _appUserRepository.FindAll().Select(c => new UserModelView()
             {
                 Id = c.Id,
                 Name = c.Name,
@@ -101,7 +115,7 @@ namespace WEBSITE.Service
         }
         //public List<UserModelView> GetAllParent()
         //{
-        //    return _userService.FindAll().Where(c => !c.ParentId.HasValue).Select(c => new UserModelView()
+        //    return _appUserRepository.FindAll().Where(c => !c.ParentId.HasValue).Select(c => new UserModelView()
         //    {
         //        Id = c.Id,
         //        Name = c.Name,
@@ -110,7 +124,7 @@ namespace WEBSITE.Service
 
         public UserModelView GetById(int id)
         {
-            var data = _userService.FindById(id);
+            var data = _appUserRepository.FindById(id);
             if (data != null)
             {
                 var model = new UserModelView()
@@ -133,7 +147,7 @@ namespace WEBSITE.Service
                     {
                         Name = view.Name,
                     };
-                    _userService.Add(_category);
+                    _appUserRepository.Add(_category);
                     return true;
                 }
             }
@@ -153,11 +167,11 @@ namespace WEBSITE.Service
         {
             try
             {
-                var dataServer = _userService.FindById(view.Id);
+                var dataServer = _appUserRepository.FindById(view.Id);
                 if (dataServer != null)
                 {
                     dataServer.Name = view.Name;
-                    _userService.Update(dataServer);
+                    _appUserRepository.Update(dataServer);
                     return true;
                 }
             }
@@ -173,10 +187,10 @@ namespace WEBSITE.Service
         {
             try
             {
-                var dataServer = _userService.FindById(id);
+                var dataServer = _appUserRepository.FindById(id);
                 if (dataServer != null)
                 {
-                    _userService.Remove(dataServer);
+                    _appUserRepository.Remove(dataServer);
                     return true;
                 }
             }
@@ -192,7 +206,7 @@ namespace WEBSITE.Service
         {
             try
             {
-                var query = _userService.FindAll();
+                var query = _appUserRepository.FindAll();
                 //if (categoryViewModelSearch.CategoryParentId.HasValue && categoryViewModelSearch.CategoryParentId.Value > 0)
                 //{
                 //    if (!categoryViewModelSearch.CategoryId.HasValue)

@@ -658,3 +658,7 @@ F:\webisite\Recycling\project\TECH\WEBSITE\obj\Debug\netcoreapp3.1\WEBSITE.genru
 F:\webisite\Recycling\project\TECH\WEBSITE\obj\Debug\netcoreapp3.1\WEBSITE.csproj.AssemblyReference.cache
 D:\ProjectWord\duanxanh\project\TECH\WEBSITE\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\AppUsers\ViewLogin.cshtml.g.cs
 D:\ProjectWord\duanxanh\project\TECH\WEBSITE\obj\Debug\netcoreapp3.1\Razor\Views\Products\ProductDetail.cshtml.g.cs
+F:\webisite\Recycling\project\TECH\WEBSITE\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\AppUsers\ViewLogin.cshtml.g.cs
+F:\webisite\Recycling\project\TECH\WEBSITE\obj\Debug\netcoreapp3.1\Razor\Views\Products\ProductDetail.cshtml.g.cs
+F:\webisite\Recycling\project\TECH\WEBSITE\obj\Debug\netcoreapp3.1\Razor\Views\AcountUser\Login.cshtml.g.cs
+F:\webisite\Recycling\project\TECH\WEBSITE\obj\Debug\netcoreapp3.1\Razor\Views\Cart\Index.cshtml.g.cs

@@ -16,6 +16,7 @@ namespace WEBSITE.Service
         PagedResult<ProductModelView> GetAllPaging(ProductViewModelSearch productViewModelSearch);
         ProductModelView GetById(int id);
         int Add(ProductModelView view);
+        bool AddUserPointProduct(int productId,int userId);
         bool Update(ProductModelView view);
         bool Deleted(int id);
         void Save();
@@ -23,11 +24,18 @@ namespace WEBSITE.Service
     public class ProductService : IProductService
     {
         private readonly IProductRepository _productRepository;
+        private readonly IAppUserProductRepository _appUserProductRepository;
+        private readonly IAppUserRepository _appUserRepository;
         private IUnitOfWork _unitOfWork;
-        public ProductService(IProductRepository productRepository, IUnitOfWork unitOfWork)
+        public ProductService(IProductRepository productRepository, 
+            IUnitOfWork unitOfWork,
+            IAppUserRepository appUserRepository,
+            IAppUserProductRepository appUserProductRepository)
         {
             _productRepository = productRepository;
+            _appUserRepository = appUserRepository;
             _unitOfWork = unitOfWork;
+            _appUserProductRepository = appUserProductRepository;
         }              
         public ProductModelView GetById(int id)
         {
@@ -49,7 +57,29 @@ namespace WEBSITE.Service
             }
             return null;
         }
+        public bool AddUserPointProduct(int productId,int userId)
+        {
+            try
+            {
+                var appUserProduct = new AppUsersProduct()
+                {
+                    ProductId = productId,
+                    AppUserId = userId
+                };
+                _appUserProductRepository.Add(appUserProduct);
 
+                Save();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+           
+
+         
+
+        }
         public int Add(ProductModelView view)
         {            
             try

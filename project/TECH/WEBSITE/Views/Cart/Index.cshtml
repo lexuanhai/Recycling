@@ -1,0 +1,90 @@
+﻿@using WEBSITE.Areas.Admin.Models
+@using Microsoft.AspNetCore.Http
+@using Newtonsoft.Json
+@model ProductModelView
+@{
+    var userString = Context.Session.GetString("UserInfor");
+    var _user = new UserModelView();
+    if (userString != null)
+    {
+        _user = JsonConvert.DeserializeObject<UserModelView>(userString);
+    }
+}
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="box-cart">
+    <div class="container">
+        @if (_user != null && !string.IsNullOrEmpty(userString))
+        {
+            <div class="user-info">
+                <p class="txt-title">Họ và tên: <span class=""> @_user.Name</span></p>
+                <p class="txt-title">Tổng điểm: <span class="">@_user.TotalPoint </span>điểm</p>
+            </div>
+            <div class="cart-product">
+                <p class="txt-title">Danh sách sản phẩm đổi điểm</p>
+                <div class="cart-product-table">
+                    <table id="example2" class="table table-bordered table-hover dataTable dtr-inline" aria-describedby="example2_info">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Reduced Price</th>
+                                <th>Category</th>
+                                <th>Total</th>
+                                <th>Point</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tblData">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        }
+        else
+        {
+    <div class="box-please">
+        <a href="/AcountUser/Login" class="please">Vui lòng đăng nhập để biết thông tin </a>
+    </div>
+            
+        }
+
+    </div>
+</div>
+
+
+
+<style>
+    .box-cart {
+        display: inline-block;
+        width: 100%;
+        margin-top: 106px;
+        padding: 20px 0px;
+    }
+        .box-cart .txt-title {
+            color: #3d4d65 ;
+        }
+            .box-cart .txt-title span {
+                color: #007a33 !important;
+                font-weight: 700;
+            }
+        .box-cart .box-please {
+            text-align: center;
+            margin: 50px;
+        }
+        .box-cart .cart-product .txt-title {
+            color: #3d4d65;
+            font-weight: 700;
+        }
+
+        .box-cart .please {
+            background: red;
+            color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+</style>
