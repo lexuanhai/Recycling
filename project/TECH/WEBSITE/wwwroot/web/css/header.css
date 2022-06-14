@@ -339,8 +339,8 @@
     left: -36px;
 }
 
-.box-login-out .login-out:hover + .dropdown-content-login-out {
-  display: block;
+.box-login-out .login-out:hover + .dropdown-content-login-out, .dropdown-content-login-out:hover {
+    display: block;
 }
 .dropdown-content-login-out a{
     color: #007a33!important;

@@ -1,0 +1,253 @@
+ul li {
+    list-style-type: none;
+}
+
+ul {
+    padding-left: 0px;
+}
+
+a {
+    text-decoration: none !important;
+   
+}
+    
+.box-product-detail {
+    margin-top: 107px;
+    display: inline-block;
+    width: 100%;
+    padding-top: 50px;
+}
+    .box-product-detail .box-left {
+        width: 75%;
+        display: inline-block;
+        float: left;
+        /*height: 300px;*/
+    }
+.box-product-detail .box-right {
+    width: 25%;
+    display: inline-block;
+}
+    .box-product-detail .box-left .image-product {
+        width: 100%;
+        height: 300px;
+        background: url(https://quanlydoitac.viettel.vn/files/qldt/public/voucher/image/2022/6/4/ddd5a231-2745-4ea4-907d-e83cd3acfb55.jpg);
+        background-position: left;
+        background-repeat: no-repeat;
+    }
+
+    .box-product-detail .box-right {
+        background-color: #fff;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgb(100 100 100 / 22%);
+        padding: 25px;
+    }
+        .box-product-detail .box-right .endow-detail__box {
+            -webkit-box-flex: 0;
+            -webkit-flex: 0 0 350px;
+            -ms-flex: 0 0 350px;
+            flex: 0 0 350px;
+            margin: 0 0 0 30px;
+            width: 350px;
+        }
+.endow-detail__box-item {
+    border-bottom: 1px solid #e7e7e7;
+    margin: 0 0 20px;
+    padding: 0 0 20px;
+}
+.endow-detail__box-top {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 0 8px;
+}
+    .endow-detail__box-top i {
+        color: #ee0033;
+        font-size: 16px;
+        margin: 0 8px 0 0;
+    }
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icon-theme' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: normal;
+}
+.icon-gift-2:before {
+    content: "\e97f";
+}
+.endow-detail__box-name {
+    color: #6e7173;
+    font-family: 'FS PFBeauSansPro', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight:700;
+}
+.endow-detail__box-info {
+    margin: 8px 0 0;
+}
+.endow-detail__box-badge {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+    .endow-detail__box-badge span {
+        background-color: #f15a29;
+        border-radius: 4px;
+        padding: 4px 8px;
+        color: #fff;
+        font-family: 'FS PFBeauSansPro', sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+    }
+.endow-detail__box-value {
+    color: #26292b;
+    font-family: 'FS PFBeauSansPro', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+}
+.button-plus--primary:hover {
+    border-color: #be0129;
+    color:#fff;
+}
+
+.button-plus--primary {
+    background-color: #ee0033;
+    color: #fff;
+}
+.button-plus {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    font-family: 'FS PFBeauSansPro', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    line-height: 24px;
+    padding: 9px 20px;
+    position: relative;
+    text-align: center;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    z-index: 1;
+}
+    .button-plus:hover:before {
+        width: 100%;
+    }
+
+.button-plus--primary:before {
+    background-color: #be0129;
+}
+
+.button-plus:before {
+    border-radius: 4px;
+    bottom: 0;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    width: 0;
+    z-index: -1;
+}
+.button-plus:after {
+    border-radius: 4px;
+    bottom: 0;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: -2;
+}
+.endow-detail__content {
+    margin: 25px 0 0;
+}
+.endow-detail__top {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 0 30px;
+}
+.endow-detail__thumbnail {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgb(227 227 227 / 58%);
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 100px;
+    -ms-flex: 0 0 100px;
+    flex: 0 0 100px;
+    height: 100px;
+    margin: 0 25px 0 0;
+    padding: 18px;
+    width: 100px;
+}
+    .endow-detail__thumbnail img {
+        height: 100%;
+        width: 100%;
+    }
+.endow-detail__name {
+    color: #26292b;
+    font-family: 'FS Magistral', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.endow-detail__row:not(:last-child) {
+    margin: 0 0 30px;
+}
+.endow-detail__sub {
+    color: #000;
+    font-family: 'FS PFBeauSansPro', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+    margin: 0 0 10px;
+}
+.endow-detail__list {
+    margin: 10px 0 0;
+}
+.endow-detail__des {
+    color: #26292b;
+    font-family: 'FS PFBeauSansPro', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+}

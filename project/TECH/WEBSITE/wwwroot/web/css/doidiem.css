@@ -645,6 +645,9 @@ select.form-control-plus {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
+    .endow-link__name a {
+        color: #26292b;
+    }
 .endow-link__date {
     -webkit-box-align: center;
     -webkit-align-items: center;

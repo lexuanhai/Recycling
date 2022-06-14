@@ -10,12 +10,15 @@
                 var item = data[i];                
                 html += "<tr>";
                 html += "<td>" + item.Name + "</td>";
-                html += "<td>" + item.Code + "</td>";
-                html += "<td><a herf=\"javascript:void(0)\" style=\"background-color:" + item.Code+"\" class=\"color-show\"></a></td>";
-                html += "<td><div class\"btn-group\">" +
-                    "<a class=\"btn btn-outline-danger btn-xs mr-1\" href=\"javascript:Update('" + item.Id + "')\"><i class=\"fas fa-pencil-alt\"></i> </a>" +
-                    "<a class=\"btn btn-outline-danger btn-xs\" href=\"javascript:Deleted('" + item.Id + "')\"><i class=\"fas fa-trash-alt\"></i> </a>"
-                "</div></td> ";
+                html += "<td>" + item.Price + "</td>";
+                html += "<td>" + item.Category + "</td>";
+                html += "<td>" + item.Total + "</td>";
+                html += "<td>" + item.TotalPoint + "</td>";
+                //html += "<td><a herf=\"javascript:void(0)\" style=\"background-color:" + item.Code+"\" class=\"color-show\"></a></td>";
+                //html += "<td><div class\"btn-group\">" +
+                //    "<a class=\"btn btn-outline-danger btn-xs mr-1\" href=\"javascript:Update('" + item.Id + "')\"><i class=\"fas fa-pencil-alt\"></i> </a>" +
+                //    "<a class=\"btn btn-outline-danger btn-xs\" href=\"javascript:Deleted('" + item.Id + "')\"><i class=\"fas fa-trash-alt\"></i> </a>"
+                //"</div></td> ";
                 html += "</tr>";
             }
         }
@@ -91,114 +94,114 @@
 
     }       
 
-    self.FormSubmitAdd = function () {        
-        $('#formSubmitAdd').validate({
-            ignore: [],
-            //debug: false,
-            rules: {
-                name: {
-                    required: true,
-                },
-                //subdecription: {
-                //    required: true,
-                //},
-                //decription: {
-                //    required: true
-                //},
-                categoryid: {
-                    required: true
-                },
-                //selectstatus: {
-                //    required: true
-                //},
-                price: {
-                    required: true,
-                },
-                total: {
-                    required: true,
-                },
-                manufacturingdate: {
-                    required: true
-                },
-                expirydate: {
-                    required: true
-                }
+    //self.FormSubmitAdd = function () {        
+    //    $('#formSubmitAdd').validate({
+    //        ignore: [],
+    //        //debug: false,
+    //        rules: {
+    //            name: {
+    //                required: true,
+    //            },
+    //            //subdecription: {
+    //            //    required: true,
+    //            //},
+    //            //decription: {
+    //            //    required: true
+    //            //},
+    //            categoryid: {
+    //                required: true
+    //            },
+    //            //selectstatus: {
+    //            //    required: true
+    //            //},
+    //            price: {
+    //                required: true,
+    //            },
+    //            total: {
+    //                required: true,
+    //            },
+    //            manufacturingdate: {
+    //                required: true
+    //            },
+    //            expirydate: {
+    //                required: true
+    //            }
                 
-            },
-            messages: {
-                name: {
-                    required: "Bạn chưa nhập tên sản phẩm",
-                },
-                //subdecription: {
-                //    required: "Bạn chưa nhập mô tả ngắn",
-                //},
-                //decription: {
-                //    required: "Bạn chưa nhập mô tả chi tiết",
-                //},   
-                categoryid: {
-                    required: "Bạn chọn danh mục",
-                },
-                //selectstatus: {
-                //    required: "Bạn chọn trạng thái",
-                //},
-                price: {
-                    required: "Bạn chưa nhập giá sản phẩm",
-                },
-                total: {
-                    required: "Bạn chưa nhập giá tổng sản phẩm",
-                },
-                manufacturingdate: {
-                    required: "Bạn chưa chọn ngày sản xuất",
-                },
-                expirydate: {
-                    required: "Bạn chưa chọn hạn sử dụng",
-                }
-            },
-            submitHandler: function () {
-                //alert(1);
-                var View = {
-                    Id: 10                   
-                }
-                if (self.IsUpdate) {
-                    $.ajax({
-                        url: '/Admin/Colors/Update',
-                        type: 'POST',
-                        data: {
-                            ColorsModelView: View
-                        },
-                        dataType: 'json',
-                        beforeSend: function () {
-                            Loading('show');
-                        },
-                        complete: function () {
-                            Loading('hiden');
-                        },
-                        success: function (response) {
-                            if (response.success) {
-                                self.GetDataPaging(false);
-                                $('#_addUpdate').modal('hide');
-                            }
-                        }
-                    })
-                }
-                else {
-                    debugger;
-                    var product = {
-                        Name: $(".product-name").val(),
-                        Decription: CKEDITOR.instances.txtContentdetail.getData(),
-                        SubDecription: CKEDITOR.instances.txtsubContent.getData(),
-                        Price: $(".price").val(),
-                        ReducedPrice: $(".reduced-price").val(),
-                        Total: $(".total").val(),
-                        CategoryId: $(".categoryid").val(),
-                        BrandsId: $(".brandsid").val(),
-                    };
-                    self.AddProduct(product);
-                }
+    //        },
+    //        messages: {
+    //            name: {
+    //                required: "Bạn chưa nhập tên sản phẩm",
+    //            },
+    //            //subdecription: {
+    //            //    required: "Bạn chưa nhập mô tả ngắn",
+    //            //},
+    //            //decription: {
+    //            //    required: "Bạn chưa nhập mô tả chi tiết",
+    //            //},   
+    //            categoryid: {
+    //                required: "Bạn chọn danh mục",
+    //            },
+    //            //selectstatus: {
+    //            //    required: "Bạn chọn trạng thái",
+    //            //},
+    //            price: {
+    //                required: "Bạn chưa nhập giá sản phẩm",
+    //            },
+    //            total: {
+    //                required: "Bạn chưa nhập giá tổng sản phẩm",
+    //            },
+    //            manufacturingdate: {
+    //                required: "Bạn chưa chọn ngày sản xuất",
+    //            },
+    //            expirydate: {
+    //                required: "Bạn chưa chọn hạn sử dụng",
+    //            }
+    //        },
+    //        submitHandler: function () {
+    //            //alert(1);
+    //            var View = {
+    //                Id: 10                   
+    //            }
+    //            if (self.IsUpdate) {
+    //                $.ajax({
+    //                    url: '/Admin/Colors/Update',
+    //                    type: 'POST',
+    //                    data: {
+    //                        ColorsModelView: View
+    //                    },
+    //                    dataType: 'json',
+    //                    beforeSend: function () {
+    //                        Loading('show');
+    //                    },
+    //                    complete: function () {
+    //                        Loading('hiden');
+    //                    },
+    //                    success: function (response) {
+    //                        if (response.success) {
+    //                            self.GetDataPaging(false);
+    //                            $('#_addUpdate').modal('hide');
+    //                        }
+    //                    }
+    //                })
+    //            }
+    //            else {
+    //                debugger;
+    //                var product = {
+    //                    Name: $(".product-name").val(),
+    //                    Decription: CKEDITOR.instances.txtContentdetail.getData(),
+    //                    SubDecription: CKEDITOR.instances.txtsubContent.getData(),
+    //                    Price: $(".price").val(),
+    //                    ReducedPrice: $(".reduced-price").val(),
+    //                    Total: $(".total").val(),
+    //                    CategoryId: $(".categoryid").val(),
+    //                    BrandsId: $(".brandsid").val(),
+    //                };
+    //                self.AddProduct(product);
+    //            }
 
-            }
-        });
-    };
+    //        }
+    //    });
+    //};
 
     self.AddProduct = function (product) {
         debugger;
@@ -268,7 +271,7 @@
             PageSize: tedu.configs.pageSize
         };
         $.ajax({
-            url: '/Admin/Colors/GetAllPaging',
+            url: '/Admin/Product/GetAllPaging',
             type: 'GET',
             data: _data,
             dataType: 'json',
@@ -280,12 +283,12 @@
             },
             success: function (response) {
                 self.RenderTableHtml(response.data.Results);
-                $('#lblTotalRecords').text(response.data.RowCount);
-                if (response.data.RowCount != null && response.data.RowCount > 0) {
-                    self.WrapPaging(response.data.RowCount, function () {
-                        GetDataPaging();
-                    }, isPageChanged);
-                }
+                //$('#lblTotalRecords').text(response.data.RowCount);
+                //if (response.data.RowCount != null && response.data.RowCount > 0) {
+                //    self.WrapPaging(response.data.RowCount, function () {
+                //        GetDataPaging();
+                //    }, isPageChanged);
+                //}
                
             }
         })
@@ -390,8 +393,8 @@
     }
     $(document).ready(function () {     
         self.GetDataPaging();
-        self.FormSubmitAdd();
-        self.ShowSelect();
+        //self.FormSubmitAdd();
+        //self.ShowSelect();
         //CKEDITOR.on('instanceReady', function () {
         //    $.each(CKEDITOR.instances, function (instance) {
         //        CKEDITOR.instances[instance].document.on("keyup", self.FormSubmitAdd);
@@ -402,77 +405,77 @@
         //    });
         //});
 
-        CKEDITOR.replace('txtsubContent', {
-            toolbar: [																			
-                //{ name: 'basicstyles', items: ['Bold', 'Italic'] },
-                //{ name: "styles", items: ["Styles", "Format", "Font", "FontSize"] },
-                //{ name: "colors", items: ["TextColor", "BGColor"] }
-                { name: 'clipboard', groups: ['clipboard', 'undo'], items: ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord'] },
-                { name: 'editing', groups: ['find', 'selection', 'spellchecker'], items: ['Scayt'] },
-                { name: 'links', items: ['Link', 'Unlink'] },
-                { name: 'insert', items: ['Image', 'Table'] },
-                '/',
-                { name: 'basicstyles', groups: ['basicstyles', 'cleanup'], items: ['Bold', 'Italic', 'Strike', '-', 'RemoveFormat'] },
-                { name: 'paragraph', groups: ['list', 'indent', 'blocks', 'align', 'bidi'], items: ['NumberedList', 'BulletedList'] },
-                { name: 'styles', items: ['Styles', 'Format', 'Font', 'FontSize'] },
-                { name: "colors", items: ["TextColor", "BGColor"] }
-            ]
-        });
+        //CKEDITOR.replace('txtsubContent', {
+        //    toolbar: [																			
+        //        //{ name: 'basicstyles', items: ['Bold', 'Italic'] },u
+        //        //{ name: "styles", items: ["Styles", "Format", "Font", "FontSize"] },
+        //        //{ name: "colors", items: ["TextColor", "BGColor"] }
+        //        { name: 'clipboard', groups: ['clipboard', 'undo'], items: ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord'] },
+        //        { name: 'editing', groups: ['find', 'selection', 'spellchecker'], items: ['Scayt'] },
+        //        { name: 'links', items: ['Link', 'Unlink'] },
+        //        { name: 'insert', items: ['Image', 'Table'] },
+        //        '/',
+        //        { name: 'basicstyles', groups: ['basicstyles', 'cleanup'], items: ['Bold', 'Italic', 'Strike', '-', 'RemoveFormat'] },
+        //        { name: 'paragraph', groups: ['list', 'indent', 'blocks', 'align', 'bidi'], items: ['NumberedList', 'BulletedList'] },
+        //        { name: 'styles', items: ['Styles', 'Format', 'Font', 'FontSize'] },
+        //        { name: "colors", items: ["TextColor", "BGColor"] }
+        //    ]
+        //});
 
-        CKEDITOR.replace('txtContentdetail', {});
+        //CKEDITOR.replace('txtContentdetail', {});
         
-        $(".modal").on("hidden.bs.modal", function () {
-            $(this).find('form').trigger('reset');
-        });
+        //$(".modal").on("hidden.bs.modal", function () {
+        //    $(this).find('form').trigger('reset');
+        //});
 
 
-        $(".btn-submit-search").click(function () {
-            self.GetDataPaging(true);
-        });
+        //$(".btn-submit-search").click(function () {
+        //    self.GetDataPaging(true);
+        //});
 
-        $('#boxSearch').on('hidden.bs.collapse', function () {
-            $('.name-search').val("");
-            $('.code-search').val("");
-            self.GetDataPaging(true);
-        })
-        $(".code").keyup(function () {
-            $("#colorshow").css('background-color', $(this).val());
-        });
+        //$('#boxSearch').on('hidden.bs.collapse', function () {
+        //    $('.name-search').val("");
+        //    $('.code-search').val("");
+        //    self.GetDataPaging(true);
+        //})
+        //$(".code").keyup(function () {
+        //    $("#colorshow").css('background-color', $(this).val());
+        //});
 
-        $(".customdate").datepicker({ dateFormat: 'dd/mm/yy' });        
+        //$(".customdate").datepicker({ dateFormat: 'dd/mm/yy' });        
 
-        $(".add-image").click(function () {
-            $("#file-input").click();
-        })
-        $(".btn-add").click(function () {
-            $(".content-infor").hide();
-            $(".box-content-add").show();
-        })
+        //$(".add-image").click(function () {
+        //    $("#file-input").click();
+        //})
+        //$(".btn-add").click(function () {
+        //    $(".content-infor").hide();
+        //    $(".box-content-add").show();
+        //})
 
-        $('.filesImages').on('change', function () {
-            debugger;
-            var fileUpload = $(this).get(0);
-            var files = fileUpload.files;
-            self.html = "";
-            let src = [];
-            for (var i = 0; i < files.length; i++) {            
-                var img = new Image();
+        //$('.filesImages').on('change', function () {
+        //    debugger;
+        //    var fileUpload = $(this).get(0);
+        //    var files = fileUpload.files;
+        //    self.html = "";
+        //    let src = [];
+        //    for (var i = 0; i < files.length; i++) {            
+        //        var img = new Image();
                          
-                img.onload = function () {
-                    if (this.width < 250) {
-                        //self.html += "<div class=\"image-upload item-image\" style=\"background-image:url(" + img.src + ")\"></div>";
-                        console.log("hailx" +img.src);
-                        src.push(img.src);
-                    }
-                };      
-                img.src = URL.createObjectURL(files[i]);         
-            }
-            console.log(src);
-            if (html != "") {
-                $(".box-images").append(self.html);
-            }
+        //        img.onload = function () {
+        //            if (this.width < 250) {
+        //                //self.html += "<div class=\"image-upload item-image\" style=\"background-image:url(" + img.src + ")\"></div>";
+        //                console.log("hailx" +img.src);
+        //                src.push(img.src);
+        //            }
+        //        };      
+        //        img.src = URL.createObjectURL(files[i]);         
+        //    }
+        //    console.log(src);
+        //    if (html != "") {
+        //        $(".box-images").append(self.html);
+        //    }
             
-        });
+        //});
 
        
     });

@@ -105,6 +105,10 @@ namespace WEBSITE
             services.AddTransient<IUserService, UserService>();
             //services.AddTransient<IUserAppProductService, UserService>();
             //services.AddTransient<IBrandsService, BrandsService>();
+            services.AddHttpContextAccessor();
+
+            services.AddDistributedMemoryCache();
+            services.AddSession();
 
         }
 
@@ -127,6 +131,8 @@ namespace WEBSITE
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

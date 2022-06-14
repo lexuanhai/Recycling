@@ -67,7 +67,7 @@
 
                 <form action="#" method="post" id="FormLogin">
                     <div class="form-group custom-group-box mb-3">
-                        <input type="text" class="form-control" name="txtEmailOrUserName" placeholder="Email Or User Name">
+                        <input type="text" class="form-control" name="txtEmailOrUserName" placeholder="User Name">
                         <div class="box-icon">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -83,14 +83,14 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-8">
+                        @*<div class="col-8">
                             <div class="icheck-primary">
                                 <input type="checkbox" id="remember">
                                 <label for="remember">
                                     Remember Me
                                 </label>
                             </div>
-                        </div>
+                        </div>*@
                         <!-- /.col -->
                         <div class="col-4">
                             <button type="submit" class="btn btn-primary btn-block" id="btnSubmitLogin">Sign In</button>
@@ -110,12 +110,12 @@
                     </div>*@
                 <!-- /.social-auth-links -->
 
-                <p class="mb-1">
+                @*<p class="mb-1">
                     <a href="forgot-password.html">I forgot my password</a>
                 </p>
                 <p class="mb-0">
                     <a href="register.html" class="text-center">Register a new membership</a>
-                </p>
+                </p>*@
             </div>
             <!-- /.login-card-body -->
         </div>
@@ -143,7 +143,7 @@
                 },
                 messages: {
                     txtEmailOrUserName: {
-                        required: "Bạn chưa nhập Email hoặc User Name",
+                        required: "Bạn chưa nhập User Name",
                     },
                     txtPassword: {
                         required: "Bạn chưa nhập Password",
@@ -152,11 +152,11 @@
                 },
                 submitHandler: function () {
                     $.ajax({
-                        url: '/Admin/Acount/UserLogin',
+                        url: '/Admin/AppUsers/UserLogin',
                         type: 'POST',
                         data: {
                             userView: {
-                                Email: $("input[name=txtEmailOrUserName]").val(),
+                                UserName: $("input[name=txtEmailOrUserName]").val(),
                                 PassWord: $("input[name=txtPassword]").val(),
                             }
                         },
@@ -169,7 +169,7 @@
                         },
                         success: function (response) {
                             console.log(response);
-                            if (response.Status) {
+                            if (response.data) {
                                 window.location.href = "/Admin/AppUsers/Index";
                             }
                             else {

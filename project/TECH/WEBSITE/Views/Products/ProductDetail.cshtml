@@ -1,0 +1,80 @@
+﻿@using WEBSITE.Areas.Admin.Models
+@using Microsoft.AspNetCore.Http
+@using Newtonsoft.Json
+@model ProductModelView
+@{
+    var userString = Context.Session.GetString("UserInfor");
+    var user = new UserModelView();
+    if (userString != null)
+    {
+        user = JsonConvert.DeserializeObject<UserModelView>(userString);
+    }
+}
+
+@{
+    ViewData["Title"] = "ProductViewDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Styles{
+    <link href="~/web/css/chitiet.css" rel="stylesheet">
+}
+
+<div class="box-product-detail">
+    <div class="container">
+        <div class="box-left">
+            <div class="image-product"></div>
+            <div class="endow-detail__content">
+                <div class="endow-detail__top">
+                    <div class="endow-detail__thumbnail"><img alt="img" src="https://quanlydoitac.viettel.vn/files/qldt/public/partner/logo/2022/3/13/f9bdcca1-e1fb-4fd6-803b-dd95c12cead3.jpg"></div> <h4 class="endow-detail__name">
+                        <a href="#" class="endow-detail__name-link">
+                            @Model.Name
+                        </a>
+                    </h4>
+                </div> <div class="endow-detail__info">
+                    <div class="endow-detail__row">
+                        <h5 class="endow-detail__sub">
+                            Thông tin ưu đãi và cách sử dụng
+                        </h5> <ul class="endow-detail__list"><li class="endow-detail__item"><p class="endow-detail__des">Voucher Canifa trị giá 3.000.000 VNĐ áp dụng tại Hệ thống cửa hàng thời trang Canifa.<br> Điều kiện sử dụng:<br> - Voucher sử dụng trực tiếp tại các cửa hàng của Canifa, không áp dụng mua online;<br> - Voucher chỉ được sử dụng 01 lần, áp dụng tối đa 3-5 voucher/hoá đơn;<br> - Voucher được dùng như tiền mặt nhưng không có giá trị quy đổi thành tiền mặt, không hoàn trả tiền thừa;<br> - Voucher được áp dụng cùng các chương trình khuyến mãi khác và chương trình tích điểm thành viên, thẻ VIP (không áp dụng với chương trình sinh nhật khách hàng VIP).<br> Hướng dẫn sử dụng:<br> - Bước 1: Khách hàng "Đổi điểm" thành công sẽ nhận được tin nhắn có đường link, tích vào đó lấy mã voucher để sử dụng;<br> - Bước 2: Khách hàng đến trực tiếp hệ thống cửa hàng của Canifa để thực hiện sử dụng voucher. Vui lòng cung cấp mã cho nhân viên khi thanh toán để được áp dụng giảm trừ;<br> Sản phẩm/dịch vụ vượt quá giá trị của voucher, khách hàng vui lòng thanh toán kết hợp cùng hình thức khác;<br> Hotline hỗ trợ: 1900299232 (cước phí cuộc gọi là 1.000VND/phút).</p></li></ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="box-right">
+            <div class="box-content-right">
+                <ul class="endow-detail__box-list">
+                    <li class="endow-detail__box-item">
+                        <div class="endow-detail__box-top">
+                            <i class="icon-gift-2"></i> <span class="endow-detail__box-name">
+                                Giá trị ưu đãi
+                            </span>
+                        </div> <div class="endow-detail__box-info"><div class="endow-detail__box-badge"><span>@Model.Price.Value.ToString("0.00") VNĐ</span></div></div>
+                    </li>
+                    <li class="endow-detail__box-item">
+                        <div class="endow-detail__box-top">
+                            <i class="icon-ticket"></i> <span class="endow-detail__box-name">
+                                Điểm quy đổi
+                            </span>
+                        </div> <div class="endow-detail__box-info"><span class="endow-detail__box-value">@(Model.TotalPoint.HasValue && Model.TotalPoint.Value > 0 ? Model.TotalPoint: 0) điểm</span></div>
+                    </li>
+                    <li class="endow-detail__box-item">
+                        <div class="endow-detail__box-top">
+                            <i class="icon-time"></i> <span class="endow-detail__box-name">
+                                Thời hạn
+                            </span>
+                        </div> <div class="endow-detail__box-info"><div class="endow-detail__box-info"><span class="endow-detail__box-value">@Model.DateExpired</span></div></div>
+                    </li> <!---->
+                </ul>
+                <div class="endow-detail__box-btn">
+                    <a href="/Products/ProductPoint?id=@Model.Id" class="button-plus button-plus--primary">
+                        Đổi Điểm
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+

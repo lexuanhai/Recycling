@@ -19,5 +19,7 @@ namespace WEBSITE.Areas.Admin.Models
         public bool Status { get; set; }
         public int? TotalPoint { get; set; }
         public bool IsDeleted { get; set; }
+        public string DateExpired { get; set; }
+        public int? PricePercent { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -16,12 +17,21 @@ namespace WEBSITE.Areas.Admin.Controllers
     public class CategoryController : BaseController
     {
         private readonly ICategoryService _categoryService;
-        public CategoryController(ICategoryService categoryService)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        public CategoryController(ICategoryService categoryService, IHttpContextAccessor httpContextAccessor)
         {
             _categoryService = categoryService;
+            _httpContextAccessor = httpContextAccessor;
         }
         public IActionResult Index()
         {
+            var UserInfo = _httpContextAccessor.HttpContext.Session.GetString("UserInfor");
+            string url = "";
+            if (UserInfo == null)
+            {
+                url = "/Admin/AppUsers/ViewLogin";
+                return Redirect(url);
+            }
             return View();
         }
         [HttpGet]

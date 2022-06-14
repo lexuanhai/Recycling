@@ -26,5 +26,8 @@ namespace WEBSITE.Data.DatabaseEntity
         public bool? Status { get; set; }
         public bool? IsDeleted { get; set; }
         public int? Point { get; set; }
+        public string DateExpired { get; set; }
+        public int? PricePercent { get; set; }
+
     }
 }

@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,12 +14,27 @@ namespace WEBSITE.Areas.Admin.Controllers
     public class AppUsersController: BaseController
     {
         private readonly IUserService _userService;
-        public AppUsersController(IUserService userService)
+        public IHttpContextAccessor _httpContextAccessor;
+        public AppUsersController(IUserService userService, IHttpContextAccessor httpContextAccessor)
         {
             _userService = userService;
+            _httpContextAccessor = httpContextAccessor;
         }
         [HttpGet]
         public IActionResult Index()
+        {
+            var UserInfo = _httpContextAccessor.HttpContext.Session.GetString("UserInfor");
+            string url = "";
+            if (UserInfo == null)
+            {
+                url = "/Admin/AppUsers/ViewLogin";
+                return Redirect(url);
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult ViewLogin()
         {
             return View();
         }
@@ -25,6 +42,16 @@ namespace WEBSITE.Areas.Admin.Controllers
         public JsonResult GetAll()
         {
             var data = _userService.GetAll();
+            return Json(new { data = data });
+        }
+        [HttpPost]
+        public JsonResult UserLogin(UserModelView userView)
+        {
+            var data = _userService.GetUserByUserName(userView.UserName, userView.PassWord);
+            if (data != null)
+            {
+                _httpContextAccessor.HttpContext.Session.SetString("UserInfor", JsonConvert.SerializeObject(data));
+            }
             return Json(new { data = data });
         }
     }

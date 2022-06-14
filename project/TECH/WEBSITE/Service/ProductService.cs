@@ -38,6 +38,12 @@ namespace WEBSITE.Service
                 {
                     Id = data.Id,
                     Name = data.Name,
+                    Decription = data.Decription,
+                    SubDecription = data.SubDecription,
+                    CategoryId = data.CategoryId,
+                    Total = data.Total,
+                    Price = data.Price,
+                    ReducedPrice = data.ReducedPrice,
                 };
                 return model;
             }
@@ -136,35 +142,44 @@ namespace WEBSITE.Service
             try
             {
                 var query = _productRepository.FindAll();
-                if (ProductViewModelSearch.CategoryParentId.HasValue && ProductViewModelSearch.CategoryParentId.Value > 0)
+                //if (ProductViewModelSearch.CategoryParentId.HasValue && ProductViewModelSearch.CategoryParentId.Value > 0)
+                //{
+                //    if (!ProductViewModelSearch.CategoryId.HasValue)
+                //    {
+                //        query = query.Where(c => c.Id == ProductViewModelSearch.CategoryParentId.Value);
+                //    }
+                //    else
+                //    {
+                //        if (ProductViewModelSearch.CategoryId.HasValue && ProductViewModelSearch.CategoryId.Value > 0)
+                //        {
+                //            query = query.Where(c => c.Id == ProductViewModelSearch.CategoryId.Value);
+                //        }
+                //    }
+
+                //}
+                //else
+                //{
+                //    if (ProductViewModelSearch.CategoryId.HasValue && ProductViewModelSearch.CategoryId.Value > 0)
+                //    {
+                //        query = query.Where(c => c.Id == ProductViewModelSearch.CategoryId.Value);
+                //    }
+                //}
+
+                if (ProductViewModelSearch.CategoryId.HasValue && ProductViewModelSearch.CategoryId.Value > 0)
                 {
-                    if (!ProductViewModelSearch.CategoryId.HasValue)
-                    {
-                        query = query.Where(c => c.Id == ProductViewModelSearch.CategoryParentId.Value);
-                    }
-                    else
-                    {
-                        if (ProductViewModelSearch.CategoryId.HasValue && ProductViewModelSearch.CategoryId.Value > 0)
-                        {
-                            query = query.Where(c => c.Id == ProductViewModelSearch.CategoryId.Value);
-                        }
-                    }
-                    
+                    query = query.Where(c => c.CategoryId == ProductViewModelSearch.CategoryId.Value);
                 }
-                else
-                {
-                    if (ProductViewModelSearch.CategoryId.HasValue && ProductViewModelSearch.CategoryId.Value > 0)
-                    {
-                        query = query.Where(c => c.Id == ProductViewModelSearch.CategoryId.Value);
-                    }
-                }
-                
+
                 int totalRow = query.Count();
                 query = query.Skip((ProductViewModelSearch.PageIndex - 1) * ProductViewModelSearch.PageSize).Take(ProductViewModelSearch.PageSize);
                 var data = query.Select(c => new ProductModelView()
                 {
                     Name = c.Name,
                     Id = c.Id,
+                    Price = c.Price,
+                    Total = c.Total,
+                    TotalPoint = c.Point,          
+                    CategoryId = c.CategoryId
                     //ParentId = c.ParentId
                 }).ToList();
                 var pagingData = new PagedResult<ProductModelView>

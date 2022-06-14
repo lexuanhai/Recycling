@@ -701,8 +701,11 @@
                     }
                 }
             });
+            GetAllCategory();
+            GetDataPaging(4);
 
         })
+
         $(".faq-plus__item").click(function () {
 
             if ($(this).hasClass("active") == false) {
@@ -718,5 +721,98 @@
 
 
         })
+
+        function GetAllCategory() {
+            $.ajax({
+                url: '/Admin/Category/GetAll',
+                type: 'GET',
+                dataType: 'json',
+                beforeSend: function () {
+                    //Loading('show');
+                },
+                complete: function () {
+
+                },
+                success: function (response) {
+                    var html = "";
+                    var _active = "";
+                    for (var i = 0; i < response.Data.length; i++) {
+                        if (i == 0) {
+                            _active = "active";
+                        }
+                        else {
+                            _active = "";
+                        }
+                        var item = response.Data[i];
+                        html += "<li class='tag-custom__item " + _active +"' onclick ='GetDataPaging(" + item.Id + ",this)'><a href='javascript:void(0)' class='tag-custom__link'><span class='tag-custom__name'>" + item.Name + "</span></a></li>";
+                    }
+
+                    $(".tag-custom__list").html(html);
+                    //RenderTableHtml(response.Data);
+                }
+            })
+
+        };
+
+        function GetDataPaging(categoryId,tag) {
+            $(".tag-custom__item ").removeClass("active");
+            $(tag).addClass("active");
+            var _data = {
+                CategoryId: categoryId,
+                Name: $(".name-search").val() != "" ? $(".name-search").val() : null,
+                Code: $(".code-search").val() != "" ? $(".code-search").val() : null,
+                PageIndex: 1,
+                PageSize: 10
+            };
+            $.ajax({
+                url: '/Admin/Product/GetAllPaging',
+                type: 'GET',
+                data: _data,
+                dataType: 'json',
+                beforeSend: function () {
+                    //Loading('show');
+                },
+                complete: function () {
+
+                },
+                success: function (response) {
+                    RenderTableHtml(response.data.Results);
+                }
+            })
+
+        };
+        function RenderTableHtml(data) {
+            var html = "";
+            for (var i = 0; i < data.length; i++) {
+                var item = data[i];
+                html += "<li class='endow-link__item'>" +
+                    "<span class='endow-link__label' > 5 %</span >" +
+                    "<div class='endow-link__images img-hover'><img src='https://quanlydoitac.viettel.vn/files/qldt/public/voucher/image-thumbnail/2022/6/7/d1c446ed-27f2-4b29-aab2-c8853e173438.jpg' alt='img' /></div>" +
+                    "<div class='endow-link__detail'>" +
+                    "<div class='endow-link__thumb'><img src='https://quanlydoitac.viettel.vn/files/qldt/public/partner/logo/2022/6/7/4b94dcd8-928b-460a-b194-1908565f5b2e.jpg' alt='img' /></div>" +
+                    "<h5 class='endow-link__name'>" +
+                    "<a href='#' class='endow-link__name-href'>" +item.Name+"</a>" +
+                    "</h5>" +
+                    "<div class='endow-link__date'>" +
+                    "<span class='endow-link__date-icon'><i class='icon-time'></i></span> <span class='endow-link__date-value'>31/12/2024</span>" +
+                    "</div>" +
+                    "<div class='endow-link__point'>" +
+                    "<span class='endow-link__point-icon'><i class='icon-ticket'></i></span> <span class='endow-link__point-value'>" + item.TotalPoint +" điểm</span>" +
+                    "</div>" +
+                    "</div>" +
+
+                    "<div class='action-hover'>" +
+                    "<div class='action-hover__btn'>" +
+                    "<a class='button-plus button-plus--transparent button-plus--small' href='/Products/ProductDetail?id=" + item.Id + "'> Đổi Điểm Ngay </a>" +
+                    " </div>" +
+                    "</div>" +
+                    "</li>";
+            }
+
+            $(".endow-link__list").html(html);
+
+
+        }
+
     </script>
 }

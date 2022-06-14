@@ -71,7 +71,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Danh sách bảng màu</h1>
+                    <h1>Danh sách sản phẩm</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -88,11 +88,11 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">Danh sách màu</h3>
-                        <button class="btn btn-success float-right btn-add">Thêm mới</button>
-                        <button class="btn btn-primary float-right btnSearch" type="button" data-toggle="collapse" data-target="#boxSearch" aria-expanded="false" aria-controls="collapseExample">
+                        @*<button class="btn btn-success float-right btn-add">Thêm mới</button>*@
+                        @*<button class="btn btn-primary float-right btnSearch" type="button" data-toggle="collapse" data-target="#boxSearch" aria-expanded="false" aria-controls="collapseExample">
                             Tìm kiếm
-                        </button>
-                        <partial name="_Search" />
+                        </button>*@
+                        @*<partial name="_Search" />*@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -103,15 +103,17 @@
                                         <thead>
                                             <tr>
                                                 <th>Name</th>
-                                                <th>Mã màu</th>
-                                                <th>Hiển thị</th>
-                                                <th></th>
+                                                <th>Price</th>
+                                                <th>Reduced Price</th>
+                                                <th>Category</th>
+                                                <th>Total</th>
+                                                <th>Point</th>
                                             </tr>
                                         </thead>
                                         <tbody id="tblData">
                                         </tbody>
                                     </table>
-                                    <div class="row">
+                                    @*<div class="row">
                                         <div class="col-sm-5">
                                             <div class="dataTables_info" id="datatable-checkbox_info" role="status" aria-live="polite">
                                                 <select id="ddlShowPage">
@@ -130,7 +132,7 @@
                                                 <ul id="paginationUL" class="float-right"></ul>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>*@
                                 </div>
                             </div>
                         </div>

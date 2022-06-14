@@ -486,7 +486,6 @@ D:\ProjectWord\duanxanh\project\TECH\WEBSITE\obj\Debug\netcoreapp3.1\WEBSITE.gen
 D:\ProjectWord\duanxanh\project\TECH\WEBSITE\obj\Debug\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs
 D:\ProjectWord\duanxanh\project\TECH\WEBSITE\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contact.cshtml.g.cs
 D:\ProjectWord\duanxanh\project\TECH\WEBSITE\obj\Debug\netcoreapp3.1\Razor\Views\ExchangePoints\Index.cshtml.g.cs
-D:\ProjectWord\duanxanh\project\TECH\WEBSITE\obj\Debug\netcoreapp3.1\WEBSITE.csprojAssemblyReference.cache
 D:\ProjectWord\duanxanh\project\TECH\WEBSITE\obj\Debug\netcoreapp3.1\Razor\Views\RedeemPoints\Index.cshtml.g.cs
 D:\ProjectWord\duanxanh\project\TECH\WEBSITE\obj\Debug\netcoreapp3.1\Razor\Views\RedeemPoints\PointAddress.cshtml.g.cs
 D:\ProjectWord\duanxanh\project\TECH\WEBSITE\obj\Debug\netcoreapp3.1\Razor\Views\Products\Index.cshtml.g.cs
@@ -657,3 +656,5 @@ F:\webisite\Recycling\project\TECH\WEBSITE\obj\Debug\netcoreapp3.1\WEBSITE.dll
 F:\webisite\Recycling\project\TECH\WEBSITE\obj\Debug\netcoreapp3.1\WEBSITE.pdb
 F:\webisite\Recycling\project\TECH\WEBSITE\obj\Debug\netcoreapp3.1\WEBSITE.genruntimeconfig.cache
 F:\webisite\Recycling\project\TECH\WEBSITE\obj\Debug\netcoreapp3.1\WEBSITE.csproj.AssemblyReference.cache
+D:\ProjectWord\duanxanh\project\TECH\WEBSITE\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\AppUsers\ViewLogin.cshtml.g.cs
+D:\ProjectWord\duanxanh\project\TECH\WEBSITE\obj\Debug\netcoreapp3.1\Razor\Views\Products\ProductDetail.cshtml.g.cs

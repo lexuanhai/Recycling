@@ -1,4 +1,15 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http
+@using WEBSITE.Areas.Admin.Models
+@using Newtonsoft.Json
+@{
+    var userString = Context.Session.GetString("UserInfor");
+    var user = new UserModelView();
+    if (userString != null)
+    {
+        user = JsonConvert.DeserializeObject<UserModelView>(userString);
+    }
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     @*<meta charset="utf-8" />
@@ -82,11 +93,24 @@
                     </ul>
                 </div>
                 <div class="box-login-out">
-                    <a style="color: #272727" href="" class="login-out"><i class="fas fa-user-alt"></i></a>
-                    <div class="dropdown-content-login-out">
-                        <a href="">Đăng Ký</a>
-                        <a href="">Đăng Nhập</a>
-                    </div>
+
+                    @if (user != null && !string.IsNullOrEmpty(user.Name))
+                    {
+                        <span>@user.Name</span>
+                    }
+                    else
+                    {
+                        <a style="color: #272727" href="" class="login-out">
+                            <i class="fas fa-user-alt"></i>
+                        </a>    
+                        <div class="dropdown-content-login-out">
+                            <a href="">Đăng Ký</a>
+                            <a href="/L">Đăng Nhập</a>
+                        </div>
+                    }
+
+
+                    
                     <a href="#" class="icon-search">
                         <i class="fas fa-search" style="color: black"></i>
                     </a>
@@ -161,7 +185,7 @@
             </main>
         </div>*@
 
-    
+
 
     <footer class="site-footer">
         <div class="container">

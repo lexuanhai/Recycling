@@ -14,6 +14,7 @@ namespace WEBSITE.Service
     public interface IUserService
     {
         List<UserModelView> GetAll();
+        UserModelView GetUserByUserName(string userName,string password);
         PagedResult<UserModelView> GetAllPaging(AppUserViewModelSearch appUserViewModelSearch);        
         UserModelView GetById(int id);
         bool Add(UserModelView view);
@@ -36,6 +37,21 @@ namespace WEBSITE.Service
             _unitOfWork = unitOfWork;
             _appUserProductRepository = appUserProductRepository;
             _productRepository = productRepository;
+        }
+        public UserModelView GetUserByUserName(string userName, string password)
+        {
+            var data = _userService.FindAll().Where(u => u.UserName == userName && u.PassWord == password).Select(c => new UserModelView()
+            {
+                Id = c.Id,
+                Name = c.Name,
+                UserName = c.UserName,
+                TotalPoint = c.TotalPoint
+            }).FirstOrDefault();
+            if (data != null)
+            {
+                return data;
+            }
+            return null;
         }
         public List<UserModelView> GetAll()
         {
