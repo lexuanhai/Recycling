@@ -15,8 +15,11 @@ namespace WEBSITE.Service
     {
         PagedResult<ProductModelView> GetAllPaging(ProductViewModelSearch productViewModelSearch);
         ProductModelView GetById(int id);
+        List<ProductModelView> GetProductByUserId(int userId);
+        List<TelecomModelView> GetTelecomByUserId(int userId);
         int Add(ProductModelView view);
         bool AddUserPointProduct(int productId,int userId);
+        bool AddUserTelecom(int userId, TelecomModelView telecomModelView);
         bool Update(ProductModelView view);
         bool Deleted(int id);
         void Save();
@@ -25,14 +28,17 @@ namespace WEBSITE.Service
     {
         private readonly IProductRepository _productRepository;
         private readonly IAppUserProductRepository _appUserProductRepository;
+        private readonly ITelecomRepository _telecomRepository;
         private readonly IAppUserRepository _appUserRepository;
         private IUnitOfWork _unitOfWork;
         public ProductService(IProductRepository productRepository, 
             IUnitOfWork unitOfWork,
             IAppUserRepository appUserRepository,
+            ITelecomRepository telecomRepository,
             IAppUserProductRepository appUserProductRepository)
         {
             _productRepository = productRepository;
+            _telecomRepository = telecomRepository;
             _appUserRepository = appUserRepository;
             _unitOfWork = unitOfWork;
             _appUserProductRepository = appUserProductRepository;
@@ -52,10 +58,33 @@ namespace WEBSITE.Service
                     Total = data.Total,
                     Price = data.Price,
                     ReducedPrice = data.ReducedPrice,
+                    TotalPoint = data.Point
                 };
                 return model;
             }
             return null;
+        }
+        public List<TelecomModelView> GetTelecomByUserId(int userId)
+        {
+            var model = _telecomRepository.FindAll().Where(p => p.UserId == userId).Select(t=> new TelecomModelView() { 
+            UserId=t.UserId,
+            Name = t.Name,
+            Exchange = t.Exchange,
+            Point = t.Point            
+            }).ToList();
+            //if (model != null && model.Count > 0)
+            //{                
+            //    foreach (var item in model)
+            //    {
+            //        if (!item.Point.HasValue)
+            //        {
+            //            item.Point.Value = 0;
+            //        }
+            //    }
+            //    return lstProduct;
+            //}
+            return model;
+
         }
         public bool AddUserPointProduct(int productId,int userId)
         {
@@ -75,11 +104,54 @@ namespace WEBSITE.Service
             {
                 return false;
             }
-           
+        }
+        public bool AddUserTelecom(int userId,TelecomModelView telecomModelView)
+        {
+            try
+            {
+                var appUserProduct = new Telecom()
+                {
+                    UserId = userId,
+                    Name = telecomModelView.Name,
+                    Exchange = telecomModelView.Exchange,
+                    Point = telecomModelView.Point
+                };
+                _telecomRepository.Add(appUserProduct);
 
-         
+                Save();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        public List<ProductModelView> GetProductByUserId(int userId)
+        {
+            var model = _appUserProductRepository.FindAll().Where(p => p.AppUserId == userId).ToList();
+            if (model != null && model.Count > 0)
+            {
+                var lstProduct = new List<ProductModelView>();
+                model = model.Distinct().ToList();
+
+                foreach (var item in model)
+                {
+                    var product = GetById(item.ProductId.Value);
+                    if (product != null)
+                    {
+                        if (product.TotalPoint == null)
+                        {
+                            product.TotalPoint = 0;
+                        }                      
+                        lstProduct.Add(product);
+                    }
+                }
+                return lstProduct;
+            }
+            return null;
 
         }
+
         public int Add(ProductModelView view)
         {            
             try

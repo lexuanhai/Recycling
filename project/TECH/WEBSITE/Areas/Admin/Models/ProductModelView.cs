@@ -11,6 +11,7 @@ namespace WEBSITE.Areas.Admin.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Decription { get; set; }
+        public string CategoryName { get; set; }
         public string SubDecription { get; set; }
         public decimal? Price { get; set; }
         public decimal? ReducedPrice { get; set; }
@@ -21,5 +22,6 @@ namespace WEBSITE.Areas.Admin.Models
         public bool IsDeleted { get; set; }
         public string DateExpired { get; set; }
         public int? PricePercent { get; set; }
+        public decimal? IntoPrice { get; set; }
     }
 }

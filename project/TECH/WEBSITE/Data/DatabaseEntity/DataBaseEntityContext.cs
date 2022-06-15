@@ -13,6 +13,7 @@ namespace WEBSITE.Data.DatabaseEntity
         public DbSet<AppRoles> AppRoles { set; get; }
         public DbSet<AppUsers> AppUsers { set; get; }
         public DbSet<Category> Categories { set; get; }
+        public DbSet<Telecom> Telecoms { set; get; }
         public DbSet<Product> Product { set; get; }
         public DbSet<AppUsersProduct> AppUsersProduct { set; get; }
         //public DbSet<Roles> Roles { set; get; }

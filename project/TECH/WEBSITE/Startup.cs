@@ -93,6 +93,7 @@ namespace WEBSITE
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<IAppUserRepository, AppUserRepository>();
             services.AddTransient<IAppUserProductRepository, AppUserProductRepository>();
+            services.AddTransient<ITelecomRepository, TelecomRepository>();
             // services.AddTransient<IBrandsRepository, BrandsRepository>();
 
             // service

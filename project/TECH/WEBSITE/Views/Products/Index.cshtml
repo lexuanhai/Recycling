@@ -62,23 +62,18 @@
                             <div id="woocommerce_product_categories-2" class="widget woocommerce widget_product_categories">
                                 <h3 class="widget-title">Danh mục sản phẩm</h3>
                                 <ul class="product-categories">
-                                    <li class="cat-item cat-item-204"><a href="https://green.hap.vn/danh-muc/dac-san-nghe-tinh">Đặc sản Nghệ Tĩnh</a></li>
-                                    <li class="cat-item cat-item-205"><a href="https://green.hap.vn/danh-muc/dac-san-tay-bac">Đặc sản Tây Bắc</a></li>
-                                    <li class="cat-item cat-item-192"><a href="https://green.hap.vn/danh-muc/thuc-pham-sach/gia-vi-an-toan">Gia vị an toàn</a></li>
-                                    <li class="cat-item cat-item-26"><a href="https://green.hap.vn/danh-muc/hat-giong-an-toan">Hạt giống an toàn</a></li>
-                                    <li class="cat-item cat-item-50"><a href="https://green.hap.vn/danh-muc/hat-giong-an-toan/hat-giong-rau">Hạt giống rau</a></li>
-                                    <li class="cat-item cat-item-27"><a href="https://green.hap.vn/danh-muc/thuc-pham-sach">Thực phẩm sạch</a></li>
-                                    <li class="cat-item cat-item-45"><a href="https://green.hap.vn/danh-muc/thuc-pham-sach/rau-sach-da-nang">Rau sạch Đà Nẵng</a></li>
-                                    <li class="cat-item cat-item-191"><a href="https://green.hap.vn/danh-muc/thuc-pham-sach/thuc-pham-thuc-duong">Thực phẩm thực dưỡng</a></li>
-                                    <li class="cat-item cat-item-188"><a href="https://green.hap.vn/danh-muc/thuc-pham-sach/trai-cay-sach">Trái cây sạch</a></li>
-                                    <li class="cat-item cat-item-189"><a href="https://green.hap.vn/danh-muc/thuc-pham-sach/thuc-pham-kho">Thực phẩm khô</a></li>
+                                    <li class="cat-item cat-item-204"><a href="javascript:void(0)">Đồ trang trí</a></li>
+                                    <li class="cat-item cat-item-205"><a href="javascript:void(0)">Tái chế</a></li>
+                                    <li class="cat-item cat-item-192"><a href="javascript:void(0)">Thời trang</a></li>
+                                    <li class="cat-item cat-item-26"><a href="javascript:void(0)">Phụ kiện</a></li>
+                                    <li class="cat-item cat-item-50"><a href="javascript:void(0)">Đồ chơi</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="custom-col-right">
                         <div class="box-content-right">
-                            <div class="item-product">
+                            @*<div class="item-product">
                                 <div class="item-content">
                                     <a href="" class="custom-box">
                                         <div class="thume-img">
@@ -126,7 +121,7 @@
                                     </a>
 
                                 </div>
-                            </div>
+                            </div>*@
 
                         </div>
 
@@ -138,4 +133,64 @@
         </div>
     </div>
 </div>
+
+@section Scripts{
+    <script src="~/web/plugins/OwlCarousel2-2.3.4/docs/assets/owlcarousel/owl.carousel.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            
+            GetDataPaging();
+
+        })    
+
+        function GetDataPaging() {
+            var _data = {
+                PageIndex: 1,
+                PageSize: 10
+            };
+            $.ajax({
+                url: '/Admin/Product/GetAllPaging',
+                type: 'GET',
+                data: _data,
+                dataType: 'json',
+                beforeSend: function () {
+                    //Loading('show');
+                },
+                complete: function () {
+
+                },
+                success: function (response) {
+                    RenderTableHtml(response.data.Results);
+                }
+            })
+
+        };
+
+        function RenderTableHtml(data) {
+            var html = "";
+            for (var i = 0; i < data.length; i++) {
+                var item = data[i];
+                html += "<div class='item-product'>"+
+                    "<div class='item-content' >" +
+                    "<a href='/Products/ProductDetail?id=" + item.Id + "' class='custom-box'>"+
+                    "<div class='thume-img'>" +
+                            "<img src=''/>"+
+                                "<span class='onsale'></span>"+
+                            "</div>"+
+                                    "<div class='box-text-content'>" +
+                                    "<h2 class='woocommerce-loop-product__title'>" + item.Name + "</h2>" +
+                    "<span class='price'><del><span class='woocommerce-Price-amount amount'>" + (item.Price + 1000).toLocaleString('en-US') + "&nbsp;<span class='woocommerce-Price-currencySymbol'>₫</span></span></del> <span class='woocommerce-Price-amount amount giam'>" + item.Price.toLocaleString('en-US') +"&nbsp;<span class='woocommerce-Price-currencySymbol'>₫</span></span></span>"+
+                "</div>" +
+                    "</a>" +
+                    "</div>" +
+                    "</div >";
+            }
+
+            $(".box-content-right").html(html);
+
+
+        }
+
+    </script>
+}
 

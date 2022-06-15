@@ -1,7 +1,7 @@
 ﻿@using WEBSITE.Areas.Admin.Models
 @using Microsoft.AspNetCore.Http
 @using Newtonsoft.Json
-@model ProductModelView
+@model CartModelView
 @{
     var userString = Context.Session.GetString("UserInfor");
     var _user = new UserModelView();
@@ -24,30 +24,143 @@
                 <p class="txt-title">Tổng điểm: <span class="">@_user.TotalPoint </span>điểm</p>
             </div>
             <div class="cart-product">
-                <p class="txt-title">Danh sách sản phẩm đổi điểm</p>
-                <div class="cart-product-table">
-                    <table id="example2" class="table table-bordered table-hover dataTable dtr-inline" aria-describedby="example2_info">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Price</th>
-                                <th>Reduced Price</th>
-                                <th>Category</th>
-                                <th>Total</th>
-                                <th>Point</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tblData">
-                        </tbody>
-                    </table>
-                </div>
+                <!--<p class="txt-title">Danh sách sản phẩm đổi điểm</p>
+    <div class="cart-product-table">
+        <table id="example2" class="table table-bordered table-hover dataTable dtr-inline" aria-describedby="example2_info">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Reduced Price</th>
+                    <th>Point</th>
+                    <th>Price</th>
+                    <th>Into Price</th>-->
+                <!--</tr>
+            </thead>
+            <tbody id="tblData">
+                @if (Model != null && Model.Products.Count > 0)
+                {
+                    @foreach (var item in Model.Products)
+                    {
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>@item.CategoryName</td>
+                            <td style="width: 13%;">@item.ReducedPrice</td>
+                            <td style="text-align:right">@item.TotalPoint</td>
+                            <td style="text-align:right">@item.Price.Value.ToString("N0")</td>
+                            <td style="text-align:right">@item.IntoPrice.Value.ToString("N0")</td>
+                        </tr>
+                    }
+                    <tr>
+                        <td colspan="3" style="text-align:right"><span class="txt-title" style="font-size:16px">Tổng</span></td>
+                        <td style="text-align:right"><span class="txt-title" style="font-size:16px">@Model.Products.Sum(p => p.TotalPoint)</span></td>
+                        <td style="text-align:right"><span class="txt-title" style="font-size:16px">@Model.Products.Sum(p => p.Price.Value).ToString("N0")</span></td>
+                        <td style="text-align:right"><span class="txt-title" style="font-size:16px">@Model.Products.Sum(p => p.IntoPrice.Value).ToString("N0")</span></td>
+                    </tr>
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="5" style="text-align: center; color: #3d4d65;">Chưa có sản phẩm</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>-->
+                @if (Model == null)
+                {
+                    <div style="text-align: center; padding: 50px 0px 20px 0px">Chưa có sản phẩm đổi điểm</div>
+                }
+                else
+                {
+                    @if (Model.Products.Count > 0)
+                    {
+                        <p class="txt-title">Danh sách sản phẩm đổi điểm</p>
+                        <div class="cart-product-table">
+                            <table id="example2" class="table table-bordered table-hover dataTable dtr-inline" aria-describedby="example2_info">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Category</th>
+                                        <th>Reduced Price</th>
+                                        <th>Point</th>
+                                        <th>Price</th>
+                                        <th>Into Price</th>
+                                        @*<th>Total</th>*@
+
+                                    </tr>
+                                </thead>
+                                <tbody id="tblData">
+                                    @if (Model != null && Model.Products.Count > 0)
+                                    {
+                                        @foreach (var item in Model.Products)
+                                        {
+                                            <tr>
+                                                <td>@item.Name</td>
+                                                <td>@item.CategoryName</td>
+                                                <td style="width: 13%;">@item.ReducedPrice</td>
+                                                <td style="text-align:right">@item.TotalPoint</td>
+                                                <td style="text-align:right">@item.Price.Value.ToString("N0")</td>
+                                                <td style="text-align:right">@item.IntoPrice.Value.ToString("N0")</td>
+                                            </tr>
+                                        }
+                                        <tr>
+                                            <td colspan="3" style="text-align:right"><span class="txt-title" style="font-size:16px">Tổng</span></td>
+                                            <td style="text-align:right"><span class="txt-title" style="font-size:16px">@Model.Products.Sum(p => p.TotalPoint)</span></td>
+                                            <td style="text-align:right"><span class="txt-title" style="font-size:16px">@Model.Products.Sum(p => p.Price.Value).ToString("N0")</span></td>
+                                            <td style="text-align:right"><span class="txt-title" style="font-size:16px">@Model.Products.Sum(p => p.IntoPrice.Value).ToString("N0")</span></td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                    if ( Model.Telecoms.Count > 0)
+                    {
+                        <p class="txt-title">Danh sách ưu đãi viễn thông</p>
+                        <div class="cart-product-table">
+                            <table id="example2" class="table table-bordered table-hover dataTable dtr-inline" aria-describedby="example2_info">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Exchange</th>
+                                        <th>Point</th>
+                                        @*<th>Total</th>*@
+
+                                    </tr>
+                                </thead>
+                                <tbody id="tblData">
+                                    @if (Model != null && Model.Telecoms.Count > 0)
+                                    {
+                                        @foreach (var item in Model.Telecoms)
+                                        {
+                                            <tr>
+                                                <td>@item.Name</td>
+                                                <td>@item.Exchange</td>
+                                                <td style="text-align:right">@item.Point</td>
+                                            </tr>
+                                        }
+                                        <tr>
+                                            <td colspan="2" style="text-align:right"><span class="txt-title" style="font-size:16px">Tổng</span></td>
+                                            <td style="text-align:right"><span class="txt-title" style="font-size:16px">@Model.Products.Sum(p => p.Point)</span></td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                }               
+
             </div>
         }
         else
         {
-    <div class="box-please">
-        <a href="/AcountUser/Login" class="please">Vui lòng đăng nhập để biết thông tin </a>
-    </div>
+            <div class="box-please">
+                <a href="/AcountUser/Login" class="please">Vui lòng đăng nhập để biết thông tin </a>
+            </div>
             
         }
 
@@ -61,15 +174,20 @@
         display: inline-block;
         width: 100%;
         margin-top: 106px;
-        padding: 20px 0px;
+        padding-top: 50px;
+        padding-bottom: 40px;
     }
         .box-cart .txt-title {
-            color: #3d4d65 ;
+            color: #3d4d65;
+            font-weight: 700;
         }
-            .box-cart .txt-title span {
-                color: #007a33 !important;
-                font-weight: 700;
-            }
+        .box-cart .cart-product {
+            margin-top: 40px;
+        }
+        .box-cart .txt-title span {
+            color: #007a33 !important;
+            font-weight: 700;
+        }
         .box-cart .box-please {
             text-align: center;
             margin: 50px;
@@ -87,4 +205,11 @@
             font-weight: 700;
             text-decoration: none;
         }
+    .cart-product .txt-title {
+        font-size: 23px;
+        color: #0098da;
+    }
+    .box-cart table th, .box-cart table td{
+        font-size: 15px;
+    }
 </style>

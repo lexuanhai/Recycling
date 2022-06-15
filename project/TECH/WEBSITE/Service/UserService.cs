@@ -45,7 +45,7 @@ namespace WEBSITE.Service
             var dataServer = _appUserRepository.FindAll().Where(u=>u.Id ==id).FirstOrDefault();
             if (dataServer != null)
             {
-                dataServer.TotalPoint = point;
+                dataServer.TotalPoint = point > 0? point:0;
             }
             _appUserRepository.Update(dataServer);
 

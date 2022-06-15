@@ -52,7 +52,7 @@
                 <ul class="endow-detail__box-list">
                     <li class="endow-detail__box-item">
                         <div class="endow-detail__box-top">
-                            <i class="icon-gift-2"></i> <span class="endow-detail__box-name">
+                             <span class="endow-detail__box-name">
                                 Giá trị ưu đãi
                             </span>
                         </div> <div class="endow-detail__box-info"><div class="endow-detail__box-badge"><span>@Model.Price.Value.ToString("N0") VNĐ</span></div></div>
@@ -95,11 +95,29 @@
                 </button>
             </div>
             <div class="modal-body">
-                <p>Modal body text goes here.</p>
+                <p class="title-doi">Sản phẩm sẽ được chuyển đổi theo điểm của bạn tích lũy.</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary btn-agree">Đồng ý</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" tabindex="-1" role="dialog" id="exampleModalSussec">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Đổi điểm nhận quà</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="title-doi" style="text-align:center">Bạn đã đổi điểm thành công.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-close-sucsses">Đóng</button>
             </div>
         </div>
     </div>
@@ -122,6 +140,9 @@
 
                 AddUserProduct(@productid);
             })
+            $(".btn-close-sucsses").click(function () {
+                window.location.href = "/ExchangePoints/index";
+            })
         });
 
         function AddUserProduct(productId) {
@@ -141,24 +162,9 @@
 
                 },
                  success: function (response) {
-                     console.log(response);
-                    //var html = "";
-                    //var _active = "";
-                    //for (var i = 0; i < response.Data.length; i++) {
-                    //    var item = response.Data[i];
-                    //    if (i == 0) {
-                    //        _active = "active";
-                    //        GetDataPaging(item.Id);
-                    //    }
-                    //    else {
-                    //        _active = "";
-                    //    }
-
-                    //    html += "<li class='tag-custom__item " + _active + "' onclick ='GetDataPaging(" + item.Id + ",this)'><a href='javascript:void(0)' class='tag-custom__link'><span class='tag-custom__name'>" + item.Name + "</span></a></li>";
-                    //}
-
-                    //$(".tag-custom__list").html(html);
-                    //RenderTableHtml(response.Data);
+                     $(".title-doi").text("Bạn đã đổi thành công");
+                     $('#exampleModal').modal('hide');  
+                     $('#exampleModalSussec').modal('show'); 
                 }
             })
         }

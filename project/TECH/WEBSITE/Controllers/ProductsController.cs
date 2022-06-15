@@ -68,6 +68,9 @@ namespace WEBSITE.Controllers
                     {
                         int point = _user.TotalPoint.Value - pointProduct;
                         _userService.UpdatePointUser(userId, point);
+                        _user.TotalPoint = point;
+
+                        _httpContextAccessor.HttpContext.Session.SetString("UserInfor", JsonConvert.SerializeObject(_user));
                     }
                   
                 }
