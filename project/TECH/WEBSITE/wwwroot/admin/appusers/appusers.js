@@ -12,8 +12,8 @@
                 html += "<td>" + item.UserName + "</td>";
                 html += "<td>" + item.Name + "</td>";
                 html += "<td>" + item.Phone + "</td>";
-                html += "<td>" + item.Email + "</td>";                
-                html += "<td>" + item.Address + "</td>";
+                //html += "<td>" + item.Email + "</td>";                
+                //html += "<td>" + item.Address + "</td>";
                 html += "<td>" + item.TotalPoint + "</td>";
                 if (item.Products != null && item.Products.length > 0) {
                     html += "<td><div class\"btn-group\">" +

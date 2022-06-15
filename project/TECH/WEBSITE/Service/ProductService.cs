@@ -281,7 +281,8 @@ namespace WEBSITE.Service
                     Price = c.Price,
                     Total = c.Total,
                     TotalPoint = c.Point,          
-                    CategoryId = c.CategoryId
+                    CategoryId = c.CategoryId,
+                    UrlImage = c.UrlImage
                     //ParentId = c.ParentId
                 }).ToList();
                 var pagingData = new PagedResult<ProductModelView>

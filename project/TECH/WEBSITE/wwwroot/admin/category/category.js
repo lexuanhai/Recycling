@@ -246,7 +246,8 @@
                         },
                         success: function (response) {
                             if (response.success) {
-                                self.GetData();
+                                //self.GetData();
+                                self.GetDataPaging(true);
                                 $('#_add').modal('hide');
                             }
                         }
@@ -270,7 +271,7 @@
                         },
                         success: function (response) {
                             if (response.success) {
-                                self.GetData();
+                                self.GetDataPaging(true);
                                 $('#_add').modal('hide');
                             }
                         }

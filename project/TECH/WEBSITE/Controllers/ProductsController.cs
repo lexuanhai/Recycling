@@ -67,6 +67,10 @@ namespace WEBSITE.Controllers
                     if (_user.TotalPoint.HasValue && _user.TotalPoint.Value > 0)
                     {
                         int point = _user.TotalPoint.Value - pointProduct;
+                        if (point <=0)
+                        {
+                            point = 0;
+                        }
                         _userService.UpdatePointUser(userId, point);
                         _user.TotalPoint = point;
 

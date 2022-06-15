@@ -12,6 +12,7 @@ namespace WEBSITE.Areas.Admin.Models
         public string Name { get; set; }
         public string Decription { get; set; }
         public string CategoryName { get; set; }
+        public string UrlImage { get; set; }
         public string SubDecription { get; set; }
         public decimal? Price { get; set; }
         public decimal? ReducedPrice { get; set; }
