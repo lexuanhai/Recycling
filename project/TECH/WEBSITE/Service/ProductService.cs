@@ -58,7 +58,9 @@ namespace WEBSITE.Service
                     Total = data.Total,
                     Price = data.Price,
                     ReducedPrice = data.ReducedPrice,
-                    TotalPoint = data.Point
+                    TotalPoint = data.Point,
+                    DateExpired =data.DateExpired,
+                    PricePercent = data.PricePercent
                 };
                 return model;
             }
@@ -282,7 +284,9 @@ namespace WEBSITE.Service
                     Total = c.Total,
                     TotalPoint = c.Point,          
                     CategoryId = c.CategoryId,
-                    UrlImage = c.UrlImage
+                    UrlImage = c.UrlImage,
+                    PricePercent = c.PricePercent,
+                    DateExpired = c.DateExpired
                     //ParentId = c.ParentId
                 }).ToList();
                 var pagingData = new PagedResult<ProductModelView>

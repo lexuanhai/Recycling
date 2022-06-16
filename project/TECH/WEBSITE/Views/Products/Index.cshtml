@@ -31,14 +31,14 @@
                         <div class="box-content-left">
                             <div id="woocommerce_product_search-2" class="widget woocommerce widget_product_search">
                                 <h3 class="widget-title">Tìm kiếm sản phẩm</h3>
-                                <form role="search" method="get" class="woocommerce-product-search" action="https://green.hap.vn/">
+                                <form role="search" method="get" class="woocommerce-product-search">
                                     <label class="screen-reader-text" for="woocommerce-product-search-field-0">Tìm kiếm cho:</label>
                                     <input type="search" id="woocommerce-product-search-field-0" class="search-field" placeholder="Tìm sản phẩm…" value="" name="s">
                                     <button type="submit" value="Tìm kiếm">Tìm kiếm</button>
                                     <input type="hidden" name="post_type" value="product">
                                 </form>
                             </div>
-                            <div id="woocommerce_price_filter-2" class="widget woocommerce widget_price_filter">
+                            @*<div id="woocommerce_price_filter-2" class="widget woocommerce widget_price_filter">
                                 <h3 class="widget-title">Lọc theo giá</h3>
                                 <form method="get" action="https://green.hap.vn/san-pham/">
                                     <div class="price_slider_wrapper">
@@ -58,7 +58,7 @@
                                         </div>
                                     </div>
                                 </form>
-                            </div>
+                            </div>*@
                             <div id="woocommerce_product_categories-2" class="widget woocommerce widget_product_categories">
                                 <h3 class="widget-title">Danh mục sản phẩm</h3>
                                 <ul class="product-categories">
@@ -145,8 +145,9 @@
 
         function GetDataPaging() {
             var _data = {
+                //CategoryId: _CategoryId
                 PageIndex: 1,
-                PageSize: 10
+                PageSize: 12
             };
             $.ajax({
                 url: '/Admin/Product/GetAllPaging',
@@ -174,19 +175,19 @@
                     "<div class='item-content' >" +
                     "<a href='/Products/ProductDetail?id=" + item.Id + "' class='custom-box'>"+
                     "<div class='thume-img'>" +
-                            "<img src=''/>"+
+                    "<img src='/web/img/product-image/" + item.UrlImage +"' with='100%' height='100%'/>"+
                                 "<span class='onsale'></span>"+
                             "</div>"+
                                     "<div class='box-text-content'>" +
-                                    "<h2 class='woocommerce-loop-product__title'>" + item.Name + "</h2>" +
-                    "<span class='price'><del><span class='woocommerce-Price-amount amount'>" + (item.Price + 1000).toLocaleString('en-US') + "&nbsp;<span class='woocommerce-Price-currencySymbol'>₫</span></span></del> <span class='woocommerce-Price-amount amount giam'>" + item.Price.toLocaleString('en-US') +"&nbsp;<span class='woocommerce-Price-currencySymbol'>₫</span></span></span>"+
+                    "<h2 class='woocommerce-loop-product__title'>" + item.Name + "</h2>" +
+                    "<span class='price'><del><span class='woocommerce-Price-amount amount'>" + (item.Price != null ? item.Price : 4000) + "&nbsp;<span class='woocommerce-Price-currencySymbol'>₫</span></span></del> <span class='woocommerce-Price-amount amount giam'>" + (item.Price != null ? item.Price : 3000+400) + "&nbsp;<span class='woocommerce-Price-currencySymbol'>₫</span></span></span>" +
                 "</div>" +
                     "</a>" +
                     "</div>" +
                     "</div >";
             }
-
-            $(".box-content-right").html(html);
+            //return html;
+            $(".box-content-right").append(html);
 
 
         }

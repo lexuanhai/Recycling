@@ -55,7 +55,7 @@
                              <span class="endow-detail__box-name">
                                 Giá trị ưu đãi
                             </span>
-                        </div> <div class="endow-detail__box-info"><div class="endow-detail__box-badge"><span>@Model.Price.Value.ToString("N0") VNĐ</span></div></div>
+                        </div> <div class="endow-detail__box-info"><div class="endow-detail__box-badge"><span>@(Model.Price.HasValue && Model.Price.Value > 0? Model.Price.Value +" VNĐ": Model.PricePercent + " %")</span></div></div>
                     </li>
                     <li class="endow-detail__box-item">
                         <div class="endow-detail__box-top">

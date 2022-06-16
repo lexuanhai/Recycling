@@ -789,7 +789,7 @@
             for (var i = 0; i < data.length; i++) {
                 var item = data[i];
                 html += "<li class='endow-link__item'>" +
-                    "<span class='endow-link__label' > 5 %</span >" +
+                    "<span class='endow-link__label' > " + (item.Price != null ? item.Price + " VNĐ" : item.PricePercent +" %") + "</span >" +
                     "<div class='endow-link__images img-hover'><img src='/web/img/product-image/" + item.UrlImage+"' alt='img' /></div>" +
                     "<div class='endow-link__detail'>" +
                     "<div class='endow-link__thumb'><img src='https://quanlydoitac.viettel.vn/files/qldt/public/partner/logo/2022/6/7/4b94dcd8-928b-460a-b194-1908565f5b2e.jpg' alt='img' /></div>" +
@@ -797,7 +797,7 @@
                     "<a href='#' class='endow-link__name-href'>" +item.Name+"</a>" +
                     "</h5>" +
                     "<div class='endow-link__date'>" +
-                    "<span class='endow-link__date-icon'><i class='icon-time'></i></span> <span class='endow-link__date-value'>31/12/2024</span>" +
+                    "<span class='endow-link__date-icon'><i class='icon-time'></i></span> <span class='endow-link__date-value'>" + item.DateExpired+"</span>" +
                     "</div>" +
                     "<div class='endow-link__point'>" +
                     "<span class='endow-link__point-icon'><i class='icon-ticket'></i></span> <span class='endow-link__point-value'>" + item.TotalPoint +" điểm</span>" +
