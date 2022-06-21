@@ -8,6 +8,6 @@ namespace WEBSITE.Areas.Admin.Models.Search
     public class ProductViewModelSearch : PageViewModel
     {
         public int? CategoryId { get; set; }
-        public int? CategoryParentId { get; set; }
+        public int? CategoryParentId { get; set; }        
     }
 }

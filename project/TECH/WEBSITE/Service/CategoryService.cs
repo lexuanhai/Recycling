@@ -34,7 +34,7 @@ namespace WEBSITE.Service
         }
         public List<CategoryModelView> GetAll()
         {
-            var dataModel = _categoryRepository.FindAll().Select(c => new CategoryModelView()
+            var dataModel = _categoryRepository.FindAll().Where(c=>c.Id != 18).Select(c => new CategoryModelView()
             {
                 Id = c.Id,
                 Name = c.Name,

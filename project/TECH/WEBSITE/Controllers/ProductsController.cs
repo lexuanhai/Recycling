@@ -46,7 +46,7 @@ namespace WEBSITE.Controllers
 
         public IActionResult Index()
         {
-            _userService.UpdatePointUser(1, 100);
+            //_userService.UpdatePointUser(1, 100);
             return View();
         }
        public IActionResult About()

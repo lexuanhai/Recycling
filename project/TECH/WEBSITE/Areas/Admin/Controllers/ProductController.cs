@@ -66,6 +66,12 @@ namespace WEBSITE.Areas.Admin.Controllers
             var data = _productService.GetAllPaging(productViewModelSearch);
             return Json(new { data = data });
         }
+        [HttpGet]
+        public JsonResult GetAllProductsPaging(ProductViewModelSearch productViewModelSearch)
+        {
+            var data = _productService.GetAllPaging(productViewModelSearch);
+            return Json(new { data = data });
+        }
 
     }
 }

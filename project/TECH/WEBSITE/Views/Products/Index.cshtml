@@ -145,12 +145,12 @@
 
         function GetDataPaging() {
             var _data = {
-                //CategoryId: _CategoryId
+                CategoryId: 18,
                 PageIndex: 1,
                 PageSize: 12
             };
             $.ajax({
-                url: '/Admin/Product/GetAllPaging',
+                url: '/Admin/Product/GetAllProductsPaging',
                 type: 'GET',
                 data: _data,
                 dataType: 'json',

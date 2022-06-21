@@ -665,5 +665,4 @@ D:\ProjectWord\duanxanh\project\TECH\WEBSITE\obj\Debug\netcoreapp3.1\WEBSITE.pdb
 D:\ProjectWord\duanxanh\project\TECH\WEBSITE\obj\Debug\netcoreapp3.1\WEBSITE.genruntimeconfig.cache
 D:\ProjectWord\duanxanh\project\TECH\WEBSITE\bin\Debug\netcoreapp3.1\WEBSITE.pdb
 D:\ProjectWord\duanxanh\project\TECH\WEBSITE\bin\Debug\netcoreapp3.1\WEBSITE.Views.pdb
-D:\ProjectWord\duanxanh\project\TECH\WEBSITE\obj\Debug\netcoreapp3.1\WEBSITE.csprojAssemblyReference.cache
 F:\webisite\Recycling\project\TECH\WEBSITE\obj\Debug\netcoreapp3.1\Razor\Views\TelecomOffers\TelecomOffersDetail.cshtml.g.cs
