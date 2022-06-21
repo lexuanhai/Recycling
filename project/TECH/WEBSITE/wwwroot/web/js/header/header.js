@@ -13,4 +13,14 @@
          $(".nav-link").css("font-size","16px"); 
       }
     }
+   
+    $(document).ready(function () {
+        $(".menu-mobile").click(function () {
+            $("#boxSearch").show();
+        })
+        $(".uk-close").click(function () {
+            $("#boxSearch").hide();
+        })
+
+    })
 })();

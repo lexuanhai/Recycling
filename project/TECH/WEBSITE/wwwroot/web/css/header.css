@@ -492,11 +492,14 @@ button.uk-icon:not(:disabled) {
         width: 40px;
         height: 40px;
     }
+    #boxSearch{
+        display:none;
+    }
 }
 @media(max-width: 480px){
     .navbar-branch.logo{
         height: 50px !important;
-        width: 120px !important;
+        width: 100px !important;
     }
     .navbar-branch.logo{
         background-size: contain;
@@ -516,5 +519,7 @@ button.uk-icon:not(:disabled) {
     .box-menu .box-menu-mobile .navbar-nav .nav-link {
         padding: 10px 30px;
     }
-
+    .box-login-out span{
+        font-size: 12px;
+    }
 }

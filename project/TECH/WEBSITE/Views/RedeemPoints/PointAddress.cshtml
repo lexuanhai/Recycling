@@ -6,18 +6,77 @@
 @section Styles{
     <link href="~/web/css/diadiemdoidiem.css" rel="stylesheet">
 }
+<style>
+    .box-address {
+        display: inline-block;
+        width: 100%;
+        height: 450px;
+    }
+
+        .box-address ul {
+            background: #f2f2f2;
+            height: 50px;
+            display: flex;
+            width: 100%;
+            align-items: center;
+            padding: 2px;
+            margin-bottom: unset;
+        }
+
+            .box-address ul li {
+                display: flex;
+                padding: 2px 10px;
+                align-items: center;
+                height:100%;
+                cursor:pointer;
+            }
+                .box-address ul li.active {
+                    display: flex;
+                    background: #fff;
+                }
+        .box-address .address-city {
+        }
+
+    .item-city {
+        display: none;
+    }
+    .item-city.active{
+        display:block;
+    }
+</style>
 <div class="box-garbage-collection">
     <div class="box-image-head">
         <div class="container">
             <p class="txt-text"><a href="">Trang chủ </a> <span>> </span>Địa điểm thu hồi </p>
+
         </div>
     </div>
+
     <div class="box-content">
         <div class="container">
             <h3 class="txt-title">Địa điểm thu hồi</h3>
+            <div class="box-address">
+                <ul>
+                    <li class="item-city-title active" data-city="ho-chi-minh">TP.Hồ Chí Minh</li>
+                    <li class="item-city-title" data-city="ha-noi">Hà Nội</li>
+                    <li class="item-city-title" data-city="da-nang">Đà Nẵng</li>
+                </ul>
+                <div class="address-city">
+                    <div class="ho-chi-minh item-city active">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.8481468333957!2d106.68343061411686!3d10.822930661294727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528e4f4014875%3A0x2d84b80670a0c09e!2zTmd1eeG7hW4gVGjDoWkgU8ahbiwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaWV0bmFt!5e0!3m2!1sen!2sus!4v1655478469820!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="ha-noi item-city">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.2241321399792!2d105.81565411424522!3d21.02371609332788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab420689b517%3A0x9993cd214d1d8c76!2zxJAuIExhIFRow6BuaCwgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1655478681947!5m2!1svi!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="da-nang item-city">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.7326242074155!2d108.18798091416932!3d16.027428244815617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31421a2cfe6e5df3%3A0x3075427b463af1d4!2zVHLGsOG7nW5nIENoaW5oLCDEkMOgIE7hurVuZywgVmlldG5hbQ!5e0!3m2!1sen!2sus!4v1655478816587!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+
             <div class="list-address">
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                         <div class="list-address-content">
                             <h3 class="txt-tile">Tại TP. Hồ Chí Minh</h3>
                             <ol>
@@ -44,9 +103,36 @@
                             </ol>
                         </div>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                         <div class="list-address-content">
                             <h3 class="txt-tile">Tại TP. Hà Nội</h3>
+                            <ol>
+                                <li>
+                                    <strong>Nhà Văn Hóa Phường Nghĩa Tân, Quận Cầu Giấy</strong><br>
+                                    45 Nghĩa Tân, P. Nghĩa Tây, Q. Cầu Giấy
+                                </li>
+                                <li>
+                                    <strong>UBND Phường Tràng Tiền, Quận Hoàn Kiếm</strong><br>
+                                    02 Cổ Tân, P. Tràng Tiền, Q. Hoàn Kiếm
+                                </li>
+                                <li>
+                                    <strong>UBND Phường Quán Thánh, Quận Ba Đình</strong><br>
+                                    12-14 Phan Đình Phùng, P. Quán Thánh, Q. Ba Đình
+                                </li>
+                                <li>
+                                    <strong>UBND Phường Thành Công, Quận Ba Đình</strong><br>
+                                    09 Thành Công, P. Thành Công, Q. Ba Đình
+                                </li>
+                                <li>
+                                    <strong>Chi Cục Bảo Vệ Môi Trường Hà Nội</strong><br>
+                                    17 Trung Yên 3, P. Trung Hòa, Q. Cầu Giấy
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="list-address-content">
+                            <h3 class="txt-tile">Tại TP. Đà Nẵng</h3>
                             <ol>
                                 <li>
                                     <strong>Nhà Văn Hóa Phường Nghĩa Tân, Quận Cầu Giấy</strong><br>
@@ -84,4 +170,20 @@
     </div>
 
 </div>
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".item-city-title").click(function () {
+                $(".item-city-title,.item-city").removeClass("active");
+                $(this).addClass("active");
+                var className = $(this).attr("data-city");
+                var custome = "." + className;
+                $(custome).addClass("active");
+            });
+        });
+
+    </script>
+}
+
+
 

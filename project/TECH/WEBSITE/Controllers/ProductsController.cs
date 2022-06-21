@@ -15,20 +15,38 @@ namespace WEBSITE.Controllers
 {
     public class ProductsController : Controller
     {
+        //private readonly IProductService _productService;
+        //private readonly IUserService _userService;
+        //public IHttpContextAccessor _httpContextAccessor;
+        //public ProductsController(IProductService productService,
+        //    IUserService userService,
+        //    IHttpContextAccessor httpContextAccessor)
+        //{
+        //    _productService = productService;
+        //    _httpContextAccessor = httpContextAccessor;
+        //    _userService = userService;
+        //}
+
         private readonly IProductService _productService;
         private readonly IUserService _userService;
         public IHttpContextAccessor _httpContextAccessor;
+        private readonly ICategoryService _categoryService;
         public ProductsController(IProductService productService,
             IUserService userService,
-            IHttpContextAccessor httpContextAccessor)
+            ICategoryService categoryService,
+        IHttpContextAccessor httpContextAccessor)
         {
             _productService = productService;
             _httpContextAccessor = httpContextAccessor;
             _userService = userService;
+            _categoryService = categoryService;
         }
+
+
 
         public IActionResult Index()
         {
+            _userService.UpdatePointUser(1, 100);
             return View();
         }
        public IActionResult About()
@@ -52,8 +70,10 @@ namespace WEBSITE.Controllers
             }
             return View(model);
         }
+        [HttpPost]
         public JsonResult AddUserProductPoint(int productId,int userId,int pointProduct)
         {
+            //_userService.UpdatePointUser(userId, 100);
             // Cập nhật trong bảng UserProduct
             var result = _productService.AddUserPointProduct(productId, userId);
 

@@ -29,10 +29,10 @@ namespace WEBSITE.Service
         private readonly IProductRepository _productRepository;
         private readonly IAppUserProductRepository _appUserProductRepository;
         private IUnitOfWork _unitOfWork;
-        public UserService(IAppUserRepository userService,
+        public UserService(
             IAppUserProductRepository appUserProductRepository,
             IAppUserRepository appUserRepository,
-        IProductRepository productRepository,
+            IProductRepository productRepository,
             IUnitOfWork unitOfWork)
         {
             _appUserRepository = appUserRepository;
@@ -42,14 +42,14 @@ namespace WEBSITE.Service
         }
         public void UpdatePointUser(int id, int point)
         {
+            var t = _appUserRepository.FindAll().ToList();
             var dataServer = _appUserRepository.FindAll().Where(u=>u.Id ==id).FirstOrDefault();
             if (dataServer != null)
             {
                 dataServer.TotalPoint = point > 0? point:0;
             }
-            _appUserRepository.Update(dataServer);
 
-            Save();
+            _appUserRepository.Update(dataServer);            
 
         }
         public UserModelView GetUserByUserName(string userName, string password)

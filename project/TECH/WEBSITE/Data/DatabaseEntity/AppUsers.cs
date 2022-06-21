@@ -9,8 +9,8 @@ using static WEBSITE.General.General;
 
 namespace WEBSITE.Data.DatabaseEntity
 {
-    //[Table("Staff")]
-   public class AppUsers: DomainEntity<int>
+    [Table("AppUsers")]
+    public class AppUsers: DomainEntity<int>
     {
         //[Key]
         //public int Id { get; set; }

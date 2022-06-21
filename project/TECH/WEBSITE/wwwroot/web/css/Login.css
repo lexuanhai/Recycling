@@ -539,3 +539,8 @@ form.sign-in-form {
             padding: 0px 20px !important;
     }
 }
+@media(max-width: 480px){
+    .panel h3{
+        font-size:15px;
+    }
+}
